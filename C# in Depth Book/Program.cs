@@ -1,7 +1,14 @@
 ﻿using Part2;
 
-var AnonymousTypesAndTuples = new AnonymousTypesAndAnonymousTypesAndTuples();
+var anonymousTypesAndTuples = new AnonymousTypesAndAnonymousTypesAndTuples();
 
-AnonymousTypesAndTuples.TupleTypes();
+/*anonymousTypesAndTuples.TupleTypes();
 
-AnonymousTypesAndTuples.AnonymousType();
+anonymousTypesAndTuples.AnonymousType();*/
+
+await anonymousTypesAndTuples.GetWeatherAsync();
+anonymousTypesAndTuples.GetEmailStatusAsync();
+
+await Task.Delay(1001);
+
+Console.WriteLine("Hello World! This is from Program.cs");

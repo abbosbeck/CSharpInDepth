@@ -18,5 +18,22 @@
 
             Console.WriteLine(book.Title);
         }
+
+        public async Task GetWeatherAsync()
+        {
+            await Task.Delay(2000);
+
+            Console.WriteLine("Weather is good, I'm here");
+        }
+
+
+        public async Task GetEmailStatusAsync()
+        {
+            Console.WriteLine("Weather is not good and I'm the second method!");
+            
+            await Task.Delay(2000);
+
+            Console.WriteLine("Email sent successfully");
+        }
     }
 }
