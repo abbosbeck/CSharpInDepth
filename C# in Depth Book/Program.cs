@@ -1,2 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Part2;
+
+var AnonymousTypesAndTuples = new AnonymousTypesAndAnonymousTypesAndTuples();
+
+AnonymousTypesAndTuples.TupleTypes();
+
+AnonymousTypesAndTuples.AnonymousType();
