@@ -1,23 +1,38 @@
 ﻿using System.Collections;
+using System.Collections.Specialized;
 
 namespace Part2
 {
     class Generics
     {
-        public static ArrayList GenerateNames()
+        public static List<string> GenerateNames()
         {
             /*string[] names = new string[5];
             names[0] = "Jon";
             names[1] = "Tom";
             names[2] = "Jerry";*/
 
-            ArrayList names = new ArrayList();
+            /*ArrayList names = new ArrayList();
             names.Add("Jon");
             names.Add("Tom");
             names.Add("Jerry");
             names.Add("Mickey");
             names.Add("Minnie");
+            names.Add(15);*/
 
+            /*StringCollection names = new StringCollection();
+            names.Add("Jon");
+            names.Add("Tom");
+            names.Add("Jerry");
+            names.Add("Mickey");
+            names.Add("Minnie");*/
+
+            List<string> names = new List<string>();
+            names.Add("Jon");
+            names.Add("Tom");
+            names.Add("Jerry");
+            names.Add("Mickey");
+            names.Add("Minnie");
 
             return names;
         }

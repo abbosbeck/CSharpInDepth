@@ -13,7 +13,7 @@ await Task.Delay(1001);
 
 Console.WriteLine("Hello World! This is from Program.cs"); */
 
-foreach(var name in Generics.GenerateNames())
+foreach(string name in Generics.GenerateNames())
 {
     Console.WriteLine(name);
 }
