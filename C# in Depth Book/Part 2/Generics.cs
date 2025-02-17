@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 
 namespace Part2
 {
-    class Generics
+    class Generics<T>
     {
         public static List<string> GenerateNames()
         {
@@ -37,14 +37,24 @@ namespace Part2
             return names;
         }
 
-        public static void TupleCreater()
+        /* public static void TupleCreater()
+         {
+             var a  = Tuple.Create("x", 10, 2.5, "fdas", "fafsa");
+
+             // a.Item1 = "Hello"; --> compiler-time error, because Tuple is immutable - read-only;
+             // if I want to change the value, I have to create a new Tuple or use ValueTuple
+
+             Console.WriteLine(a);
+         }*/
+
+        private static int value;
+        static Generics()
         {
-            var a  = Tuple.Create("x", 10, 2.5, "fdas", "fafsa");
-
-            // a.Item1 = "Hello"; --> compiler-time error, because Tuple is immutable - read-only;
-            // if I want to change the value, I have to create a new Tuple or use ValueTuple
-
-            Console.WriteLine(a);
+              Console.WriteLine($"Initilizing counter for {typeof(T)}");  
         }
+
+        public static void Increment() => value++;
+        public static void Display() => Console.WriteLine($"Counter for {typeof(T)}: {value}");
+
     }
 }
