@@ -1,14 +1,19 @@
 ﻿using Part2;
 
-var anonymousTypesAndTuples = new AnonymousTypesAndAnonymousTypesAndTuples();
+/* Types  var anonymousTypesAndTuples = new AnonymousTypesAndAnonymousTypesAndTuples();
 
-/*anonymousTypesAndTuples.TupleTypes();
+anonymousTypesAndTuples.TupleTypes();
 
-anonymousTypesAndTuples.AnonymousType();*/
+anonymousTypesAndTuples.AnonymousType();
 
 await anonymousTypesAndTuples.GetWeatherAsync();
 anonymousTypesAndTuples.GetEmailStatusAsync();
 
 await Task.Delay(1001);
 
-Console.WriteLine("Hello World! This is from Program.cs");
+Console.WriteLine("Hello World! This is from Program.cs"); */
+
+foreach(var name in Generics.GenerateNames())
+{
+    Console.WriteLine(name);
+}
