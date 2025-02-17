@@ -36,5 +36,15 @@ namespace Part2
 
             return names;
         }
+
+        public static void TupleCreater()
+        {
+            var a  = Tuple.Create("x", 10, 2.5, "fdas", "fafsa");
+
+            // a.Item1 = "Hello"; --> compiler-time error, because Tuple is immutable - read-only;
+            // if I want to change the value, I have to create a new Tuple or use ValueTuple
+
+            Console.WriteLine(a);
+        }
     }
 }
