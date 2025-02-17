@@ -36,8 +36,12 @@ Part2.GenericSinglyLinkedList.LinkedList<string> linkedListNames = new Part2.Gen
 linkedListNames.Add("Jon");
 linkedListNames.Add("Tom");
 linkedListNames.Add("Jerry");
-linkedListNames.Display();
-Console.WriteLine(linkedListNames.GetCount());
+linkedListNames.Add("Mickey");
+linkedListNames.Add("Minnie");
+linkedListNames.Add("NKLKUK");
+linkedListNames.Add("NUIKHKUJ");
+
+linkedListNames.Remove("Mickey");
 
 Part2.GenericSinglyLinkedList.LinkedList<int> linkedListAges = new Part2.GenericSinglyLinkedList.LinkedList<int>();
 

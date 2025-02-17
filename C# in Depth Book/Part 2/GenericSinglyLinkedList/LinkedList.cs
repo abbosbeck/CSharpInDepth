@@ -55,6 +55,10 @@
                 current.Next = current.Next.Next;
                 Count--;
                 return true;
+
+                // A -> B -> C -> D
+                // A.Next = C
+                // C.Next = D
             }
 
             return false;
