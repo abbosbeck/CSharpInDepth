@@ -19,7 +19,7 @@ Console.WriteLine("Hello World! This is from Program.cs"); */
 }*/
 
 
-Generics<string>.Increment();
+/*Generics<string>.Increment();
 Generics<string>.Increment();
 Generics<string>.Display();
 
@@ -29,4 +29,20 @@ Generics<int>.Display();
 
 Generics<string>.Increment();
 Generics<string>.Increment();
-Generics<string>.Display();
+Generics<string>.Display();*/
+
+Part2.GenericSinglyLinkedList.LinkedList<string> linkedListNames = new Part2.GenericSinglyLinkedList.LinkedList<string>();
+
+linkedListNames.Add("Jon");
+linkedListNames.Add("Tom");
+linkedListNames.Add("Jerry");
+linkedListNames.Display();
+Console.WriteLine(linkedListNames.GetCount());
+
+Part2.GenericSinglyLinkedList.LinkedList<int> linkedListAges = new Part2.GenericSinglyLinkedList.LinkedList<int>();
+
+linkedListAges.Add(15);
+linkedListAges.Add(20);
+linkedListAges.Add(25);
+linkedListAges.Add(30);
+linkedListAges.Display();
