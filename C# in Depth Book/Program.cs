@@ -31,7 +31,7 @@ Generics<string>.Increment();
 Generics<string>.Increment();
 Generics<string>.Display();*/
 
-Part2.GenericSinglyLinkedList.LinkedList<string> linkedListNames = new Part2.GenericSinglyLinkedList.LinkedList<string>();
+/*Part2.GenericSinglyLinkedList.LinkedList<string> linkedListNames = new Part2.GenericSinglyLinkedList.LinkedList<string>();
 
 linkedListNames.Add("Jon");
 linkedListNames.Add("Tom");
@@ -49,4 +49,4 @@ linkedListAges.Add(15);
 linkedListAges.Add(20);
 linkedListAges.Add(25);
 linkedListAges.Add(30);
-linkedListAges.Display();
+linkedListAges.Display();*/
