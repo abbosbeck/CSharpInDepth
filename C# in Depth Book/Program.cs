@@ -72,8 +72,7 @@ int c = a ?? b;
 
 Console.WriteLine(c);*/
 
-
-var usingDelegate = new UsingDelegates();
+/*var usingDelegate = new UsingDelegates();
 
 Delegate1 delegate1 = new Delegate1(usingDelegate.Multiple);
 delegate1 += usingDelegate.Multiple;
@@ -84,6 +83,23 @@ delegate1 += delegate (int x, int y)
     return x + y;
 };
 
+delegate1 += (x, y) => x+y-(x * y);
+
 delegate1(10, 5);
 
-delegate1.Invoke(50, 100);
+delegate1.Invoke(50, 100);*/
+
+int counter = 0;  // This variable is in the outer scope
+
+// Define an anonymous method that captures 'counter'
+Action increment = delegate () {
+    counter++;  // 'counter' is captured from the surrounding scope
+    Console.WriteLine("Counter is now: " + counter);
+};
+
+// Calling the anonymous method multiple times
+increment(); // Output: Counter is now: 1
+increment(); // Output: Counter is now: 2
+
+// The change is visible in the outer scope
+Console.WriteLine("Final counter: " + counter); // Output: Final counter: 2
