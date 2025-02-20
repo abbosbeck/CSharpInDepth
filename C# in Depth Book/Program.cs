@@ -79,6 +79,11 @@ Delegate1 delegate1 = new Delegate1(usingDelegate.Multiple);
 delegate1 += usingDelegate.Multiple;
 delegate1 += usingDelegate.Minus;
 
+delegate1 += delegate (int x, int y)
+{
+    return x + y;
+};
+
 delegate1(10, 5);
 
 delegate1.Invoke(50, 100);

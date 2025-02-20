@@ -95,9 +95,11 @@ namespace Part2
     {
         public delegate int Delegate1(int a, int b);
 
-        public void Add(int a, int b)
+        public int Add(int a, int b)
         {
             Console.WriteLine(a + b);
+
+            return a + b;
         }
 
         public int Multiple(int a, int b)
