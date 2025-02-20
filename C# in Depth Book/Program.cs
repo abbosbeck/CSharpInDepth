@@ -19,7 +19,6 @@ Console.WriteLine("Hello World! This is from Program.cs"); */
     Console.WriteLine(name);
 }*/
 
-
 /*Generics<string>.Increment();
 Generics<string>.Increment();
 Generics<string>.Display();
@@ -56,10 +55,10 @@ linkedListAges.Display();*/
 
 Console.WriteLine(nullableGeneric.HasValue);*/
 
-
 /*string name = "Jon";
 string name2 = name;
 
 name2 = "Tom";
 
 Console.WriteLine(name);*/
+
