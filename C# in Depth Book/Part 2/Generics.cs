@@ -50,11 +50,35 @@ namespace Part2
         private static int value;
         static Generics()
         {
-              Console.WriteLine($"Initilizing counter for {typeof(T)}");  
+            Console.WriteLine($"Initilizing counter for {typeof(T)}");
         }
 
         public static void Increment() => value++;
         public static void Display() => Console.WriteLine($"Counter for {typeof(T)}: {value}");
+    }
 
+    //  2.2.2 CLR and framework support: The Nullable<T> struct
+
+    public struct NullableGeneric<T> where T : struct
+    {
+        private bool hasValue;
+        private T value;
+        public NullableGeneric(T value)
+        {
+            this.hasValue = true;
+            this.value = value;
+        }
+        public bool HasValue { get { return hasValue; } }
+        public T Value
+        {
+            get
+            {
+                if (!hasValue)
+                {
+                    throw new InvalidOperationException("No value");
+                }
+                return value;
+            }
+        }
     }
 }

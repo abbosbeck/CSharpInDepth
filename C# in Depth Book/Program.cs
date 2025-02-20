@@ -1,5 +1,6 @@
 ﻿using Part2;
 
+
 /* Types  var anonymousTypesAndTuples = new AnonymousTypesAndAnonymousTypesAndTuples();
 
 anonymousTypesAndTuples.TupleTypes();
@@ -50,3 +51,7 @@ linkedListAges.Add(20);
 linkedListAges.Add(25);
 linkedListAges.Add(30);
 linkedListAges.Display();*/
+
+NullableGeneric<int> nullableGeneric = new NullableGeneric<int>();
+
+Console.WriteLine(nullableGeneric.HasValue);
