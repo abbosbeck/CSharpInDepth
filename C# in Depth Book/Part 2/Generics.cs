@@ -84,7 +84,7 @@ namespace Part2
 
     class NullableValueTypes
     {
-        static void PrinValueAsInt(object o)
+        public static void PrinValueAsInt(object o)
         {
            int? nullable = o as int?;
            Console.WriteLine(nullable.HasValue ? nullable.Value.ToString() : "null");

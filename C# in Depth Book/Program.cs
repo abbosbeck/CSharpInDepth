@@ -62,3 +62,6 @@ name2 = "Tom";
 
 Console.WriteLine(name);*/
 
+NullableValueTypes.PrinValueAsInt(5);
+
+NullableValueTypes.PrinValueAsInt("Hii");
