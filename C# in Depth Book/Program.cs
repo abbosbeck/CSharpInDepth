@@ -52,6 +52,14 @@ linkedListAges.Add(25);
 linkedListAges.Add(30);
 linkedListAges.Display();*/
 
-NullableGeneric<int> nullableGeneric = new NullableGeneric<int>();
+/*NullableGeneric<int> nullableGeneric = new NullableGeneric<int>();
 
-Console.WriteLine(nullableGeneric.HasValue);
+Console.WriteLine(nullableGeneric.HasValue);*/
+
+
+/*string name = "Jon";
+string name2 = name;
+
+name2 = "Tom";
+
+Console.WriteLine(name);*/
