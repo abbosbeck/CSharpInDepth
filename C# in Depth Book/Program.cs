@@ -1,4 +1,5 @@
 ﻿using Part2;
+using static Part2.UsingDelegates;
 
 
 /* Types  var anonymousTypesAndTuples = new AnonymousTypesAndAnonymousTypesAndTuples();
@@ -65,8 +66,19 @@ Console.WriteLine(name);*/
 /*NullableValueTypes.PrinValueAsInt(5);
 NullableValueTypes.PrinValueAsInt("Hii");*/
 
-int? a = null;
+/*int? a = null;
 int b = 10;
 int c = a ?? b;
 
-Console.WriteLine(c);
+Console.WriteLine(c);*/
+
+
+var usingDelegate = new UsingDelegates();
+
+Delegate1 delegate1 = new Delegate1(usingDelegate.Multiple);
+delegate1 += usingDelegate.Multiple;
+delegate1 += usingDelegate.Minus;
+
+delegate1(10, 5);
+
+delegate1.Invoke(50, 100);

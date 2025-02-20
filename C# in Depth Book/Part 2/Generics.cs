@@ -90,5 +90,29 @@ namespace Part2
            Console.WriteLine(nullable.HasValue ? nullable.Value.ToString() : "null");
         }
     }
+
+    class UsingDelegates
+    {
+        public delegate int Delegate1(int a, int b);
+
+        public void Add(int a, int b)
+        {
+            Console.WriteLine(a + b);
+        }
+
+        public int Multiple(int a, int b)
+        {
+            Console.WriteLine(a * b);
+
+            return a * b;
+        }
+
+        public int Minus(int a, int b)
+        {
+            Console.WriteLine(a - b);
+
+            return a - b;
+        }
+    }
     
 }
