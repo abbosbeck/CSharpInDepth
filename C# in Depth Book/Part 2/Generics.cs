@@ -81,4 +81,40 @@ namespace Part2
             }
         }
     }
+
+    class NullableValueTypes
+    {
+        public static void PrinValueAsInt(object o)
+        {
+           int? nullable = o as int?;
+           Console.WriteLine(nullable.HasValue ? nullable.Value.ToString() : "null");
+        }
+    }
+
+    class UsingDelegates
+    {
+        public delegate int Delegate1(int a, int b);
+
+        public int Add(int a, int b)
+        {
+            Console.WriteLine(a + b);
+
+            return a + b;
+        }
+
+        public int Multiple(int a, int b)
+        {
+            Console.WriteLine(a * b);
+
+            return a * b;
+        }
+
+        public int Minus(int a, int b)
+        {
+            Console.WriteLine(a - b);
+
+            return a - b;
+        }
+    }
+    
 }

@@ -1,4 +1,5 @@
 ﻿using Part2;
+using static Part2.UsingDelegates;
 
 
 /* Types  var anonymousTypesAndTuples = new AnonymousTypesAndAnonymousTypesAndTuples();
@@ -18,7 +19,6 @@ Console.WriteLine("Hello World! This is from Program.cs"); */
 {
     Console.WriteLine(name);
 }*/
-
 
 /*Generics<string>.Increment();
 Generics<string>.Increment();
@@ -52,6 +52,54 @@ linkedListAges.Add(25);
 linkedListAges.Add(30);
 linkedListAges.Display();*/
 
-NullableGeneric<int> nullableGeneric = new NullableGeneric<int>();
+/*NullableGeneric<int> nullableGeneric = new NullableGeneric<int>();
 
-Console.WriteLine(nullableGeneric.HasValue);
+Console.WriteLine(nullableGeneric.HasValue);*/
+
+/*string name = "Jon";
+string name2 = name;
+
+name2 = "Tom";
+
+Console.WriteLine(name);*/
+
+/*NullableValueTypes.PrinValueAsInt(5);
+NullableValueTypes.PrinValueAsInt("Hii");*/
+
+/*int? a = null;
+int b = 10;
+int c = a ?? b;
+
+Console.WriteLine(c);*/
+
+/*var usingDelegate = new UsingDelegates();
+
+Delegate1 delegate1 = new Delegate1(usingDelegate.Multiple);
+delegate1 += usingDelegate.Multiple;
+delegate1 += usingDelegate.Minus;
+
+delegate1 += delegate (int x, int y)
+{
+    return x + y;
+};
+
+delegate1 += (x, y) => x+y-(x * y);
+
+delegate1(10, 5);
+
+delegate1.Invoke(50, 100);*/
+
+int counter = 0;  // This variable is in the outer scope
+
+// Define an anonymous method that captures 'counter'
+Action increment = delegate () {
+    counter++;  // 'counter' is captured from the surrounding scope
+    Console.WriteLine("Counter is now: " + counter);
+};
+
+// Calling the anonymous method multiple times
+increment(); // Output: Counter is now: 1
+increment(); // Output: Counter is now: 2
+
+// The change is visible in the outer scope
+Console.WriteLine("Final counter: " + counter); // Output: Final counter: 2
