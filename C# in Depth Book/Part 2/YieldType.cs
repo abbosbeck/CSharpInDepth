@@ -2,9 +2,9 @@
 {
     class YieldType
     {
-        public IEnumerable<int> Numbers()
+        public IEnumerable<object> Numbers()
         {
-            yield return 1;
+            yield return SumNumber(5, 10);
             yield return 2;
             yield return 3;
             yield return 4;
@@ -18,8 +18,11 @@
             yield return 12;
             yield return 13;
             yield return 14;
-            yield break;
-            yield return 25;
+            yield return "HG=H";
         }
+
+        public int SumNumber(int a, int b)
+            => a + b;
+
     }
 }

@@ -135,4 +135,7 @@ YieldType yieldType = new YieldType();
 
 var numbers = yieldType.Numbers();
 
+foreach(int number in numbers)
+    Console.WriteLine(number);
+
 Console.WriteLine("Hiii");
