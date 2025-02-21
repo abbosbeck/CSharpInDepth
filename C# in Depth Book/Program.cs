@@ -1,4 +1,5 @@
 ﻿using Part2;
+using System.Runtime.InteropServices.Marshalling;
 using static Part2.UsingDelegates;
 
 
@@ -104,4 +105,28 @@ increment(); // Output: Counter is now: 2
 // The change is visible in the outer scope
 Console.WriteLine("Final counter: " + counter); // Output: Final counter: 2*/
 
-Collections.CollocationIenumrable();
+//Collections.CollocationIenumrable();
+
+// Using an array
+// IEnumerable can work any type of collection - this abstraction is a big advantage
+//int[] numbersArray = { 1, 2, 3, 4, 5 };
+//Console.WriteLine("Array elements:");
+//Collections.PrintElements(numbersArray);
+
+//// Using a List<T>
+//List<string> namesList = new List<string> { "Alice", "Bob", "Charlie" };
+//Console.WriteLine("\nList elements:");
+//Collections.PrintElements(namesList);
+
+MyCustomCollection myCustomCollection = new MyCustomCollection();
+myCustomCollection.Add(1);
+myCustomCollection.Add(2);
+myCustomCollection.Add(3);
+myCustomCollection.Add(4);
+myCustomCollection.Add(5);
+
+Console.WriteLine("Custom collections elements:");
+foreach(int item in myCustomCollection)
+{
+    Console.WriteLine(item);
+}
