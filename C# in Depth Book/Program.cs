@@ -89,7 +89,7 @@ delegate1(10, 5);
 
 delegate1.Invoke(50, 100);*/
 
-int counter = 0;  // This variable is in the outer scope
+/*int counter = 0;  // This variable is in the outer scope
 
 // Define an anonymous method that captures 'counter'
 Action increment = delegate () {
@@ -102,4 +102,6 @@ increment(); // Output: Counter is now: 1
 increment(); // Output: Counter is now: 2
 
 // The change is visible in the outer scope
-Console.WriteLine("Final counter: " + counter); // Output: Final counter: 2
+Console.WriteLine("Final counter: " + counter); // Output: Final counter: 2*/
+
+Collections.CollocationIenumrable();
