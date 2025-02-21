@@ -152,9 +152,10 @@ foreach(int value in YieldType.Fibonacci())
     Console.WriteLine(value);
 }*/
 
-var a = YieldType.Iterator();
 
-foreach (var item in a)
+foreach (string item in YieldType.Iterator())
 {
-    Console.WriteLine(item);
+    Console.WriteLine("Recieved value: {0}", item);
+    
+    if (item != null) break;
 }
