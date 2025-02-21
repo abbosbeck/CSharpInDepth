@@ -131,7 +131,7 @@ foreach(int item in myCustomCollection)
     Console.WriteLine(item);
 }*/
 
-//YieldType yieldType = new YieldType();
+/*//YieldType yieldType = new YieldType();
 
 //var numbers = yieldType.Numbers();
 
@@ -150,4 +150,12 @@ foreach(int value in YieldType.Fibonacci())
         break;
     }
     Console.WriteLine(value);
+}*/
+
+
+foreach (string item in YieldType.Iterator())
+{
+    Console.WriteLine("Recieved value: {0}", item);
+    
+    if (item != null) break;
 }
