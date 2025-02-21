@@ -26,7 +26,7 @@
 
         public static IEnumerable<int> Fibonacci()
         {
-            int current = 0, 
+            int current = 0,
                 next = 1;
             while (true)
             {
@@ -46,6 +46,25 @@
                 Console.WriteLine("Between yields");
                 yield return "second";
                 Console.WriteLine("After second yield");
+            }
+            finally
+            {
+                Console.WriteLine("In finally block");
+            }
+        }
+
+        public static IEnumerable<int> GenerateIntegers(int count)
+        {
+            try
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    Console.WriteLine("Yielding {0}", i);
+                    yield return i;
+                    int doubled = i * 2;
+                    Console.WriteLine("Yielding {0}", doubled);
+                    yield return doubled;
+                }
             }
             finally
             {
