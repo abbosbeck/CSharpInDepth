@@ -23,5 +23,18 @@
         public int SumNumber(int a, int b)
             => a + b;
 
+
+        public static IEnumerable<int> Fibonacci()
+        {
+            int current = 0, 
+                next = 1;
+            while (true)
+            {
+                yield return current;
+                int oldCurrent = current;
+                current = next;
+                next = oldCurrent + next;
+            }
+        }
     }
 }

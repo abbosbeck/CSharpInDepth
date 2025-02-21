@@ -131,14 +131,23 @@ foreach(int item in myCustomCollection)
     Console.WriteLine(item);
 }*/
 
-YieldType yieldType = new YieldType();
+//YieldType yieldType = new YieldType();
 
-var numbers = yieldType.Numbers();
+//var numbers = yieldType.Numbers();
 
-using (IEnumerator<int> enumerator = numbers.GetEnumerator())
+//using (IEnumerator<int> enumerator = numbers.GetEnumerator())
+//{
+//    while (enumerator.MoveNext())
+//    {
+//        Console.WriteLine(enumerator.Current);
+//    }
+//}
+
+foreach(int value in YieldType.Fibonacci())
 {
-    while (enumerator.MoveNext())
+    if (value > 1000)
     {
-        Console.WriteLine(enumerator.Current);
+        break;
     }
+    Console.WriteLine(value);
 }
