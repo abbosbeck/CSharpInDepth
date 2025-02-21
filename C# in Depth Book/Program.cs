@@ -105,7 +105,7 @@ increment(); // Output: Counter is now: 2
 // The change is visible in the outer scope
 Console.WriteLine("Final counter: " + counter); // Output: Final counter: 2*/
 
-//Collections.CollocationIenumrable();
+/*//Collections.CollocationIenumrable();
 
 // Using an array
 // IEnumerable can work any type of collection - this abstraction is a big advantage
@@ -129,4 +129,25 @@ Console.WriteLine("Custom collections elements:");
 foreach(int item in myCustomCollection)
 {
     Console.WriteLine(item);
+}*/
+
+//YieldType yieldType = new YieldType();
+
+//var numbers = yieldType.Numbers();
+
+//using (IEnumerator<int> enumerator = numbers.GetEnumerator())
+//{
+//    while (enumerator.MoveNext())
+//    {
+//        Console.WriteLine(enumerator.Current);
+//    }
+//}
+
+foreach(int value in YieldType.Fibonacci())
+{
+    if (value > 1000)
+    {
+        break;
+    }
+    Console.WriteLine(value);
 }
