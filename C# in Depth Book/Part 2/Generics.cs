@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Specialized;
-
-namespace Part2
+﻿namespace Part2
 {
     class Generics<T>
     {
@@ -86,8 +83,8 @@ namespace Part2
     {
         public static void PrinValueAsInt(object o)
         {
-           int? nullable = o as int?;
-           Console.WriteLine(nullable.HasValue ? nullable.Value.ToString() : "null");
+            int? nullable = o as int?;
+            Console.WriteLine(nullable.HasValue ? nullable.Value.ToString() : "null");
         }
     }
 
@@ -116,5 +113,5 @@ namespace Part2
             return a - b;
         }
     }
-    
+
 }

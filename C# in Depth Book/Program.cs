@@ -1,6 +1,4 @@
 ﻿using Part2;
-using System.Runtime.InteropServices.Marshalling;
-using static Part2.UsingDelegates;
 
 
 /* Types  var anonymousTypesAndTuples = new AnonymousTypesAndAnonymousTypesAndTuples();
@@ -153,9 +151,14 @@ foreach(int value in YieldType.Fibonacci())
 }*/
 
 
-foreach (string item in YieldType.Iterator())
+/*foreach (string item in YieldType.Iterator())
 {
     Console.WriteLine("Recieved value: {0}", item);
     
     if (item != null) break;
+}*/
+
+foreach (int item in YieldType.GenerateIntegers(5))
+{
+    Console.WriteLine(item);
 }
