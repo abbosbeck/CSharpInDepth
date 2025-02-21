@@ -135,7 +135,10 @@ YieldType yieldType = new YieldType();
 
 var numbers = yieldType.Numbers();
 
-foreach(int number in numbers)
-    Console.WriteLine(number);
-
-Console.WriteLine("Hiii");
+using (IEnumerator<int> enumerator = numbers.GetEnumerator())
+{
+    while (enumerator.MoveNext())
+    {
+        Console.WriteLine(enumerator.Current);
+    }
+}

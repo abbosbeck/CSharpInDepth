@@ -2,7 +2,7 @@
 {
     class YieldType
     {
-        public IEnumerable<object> Numbers()
+        public IEnumerable<int> Numbers()
         {
             yield return SumNumber(5, 10);
             yield return 2;
@@ -18,7 +18,6 @@
             yield return 12;
             yield return 13;
             yield return 14;
-            yield return "HG=H";
         }
 
         public int SumNumber(int a, int b)
