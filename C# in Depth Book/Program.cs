@@ -1,8 +1,8 @@
-﻿using Part2;
+﻿/*using Part2;
 using Part2.BinaryTree;
 
 
-/* Types  var anonymousTypesAndTuples = new AnonymousTypesAndAnonymousTypesAndTuples();
+*//* Types  var anonymousTypesAndTuples = new AnonymousTypesAndAnonymousTypesAndTuples();
 
 anonymousTypesAndTuples.TupleTypes();
 
@@ -203,11 +203,12 @@ int a = 15;
 int b = 15;
 
 Console.WriteLine("hi");*/
-Main();
+/*Main();
 unsafe static void Main()
 {
     VersionedData versioned = new VersionedData();
     versioned.Major = 2;
     versioned.Minor = 1;
     versioned.Data[10] = 300;
-}
+}*/
+
