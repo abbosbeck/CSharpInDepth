@@ -1,4 +1,5 @@
 ﻿using Part2;
+using Part2.BinaryTree;
 
 
 /* Types  var anonymousTypesAndTuples = new AnonymousTypesAndAnonymousTypesAndTuples();
@@ -163,9 +164,32 @@ foreach (int item in YieldType.GenerateIntegers(5))
     Console.WriteLine(item);
 }*/
 
-CsharpBuildInTypes strings = new CsharpBuildInTypes();
+/*CsharpBuildInTypes strings = new CsharpBuildInTypes();
 
 foreach(string item in strings)
 {
     Console.WriteLine(item);
+}*/
+
+var MuhammadsFamilyTree = new BinaryTree<string>("Muhammad (S. A. W");
+
+MuhammadsFamilyTree.SubItems = new Pair<BinaryTree<string>>(
+    new BinaryTree<string>("Abdullah"),
+    new BinaryTree<string>("Amina bint Wahb"));
+
+MuhammadsFamilyTree.SubItems.First.SubItems =
+    new Pair<BinaryTree<string>>(
+        new BinaryTree<string>("Abd al-Mutallib"),
+        new BinaryTree<string>("Fatima bint Amr"));
+
+MuhammadsFamilyTree.SubItems.Second.SubItems =
+    new Pair<BinaryTree<string>>(
+        new BinaryTree<string>("Wahb ibn Abd Manaf"),
+        new BinaryTree<string>("Barrah bint Abd al-Uzza"));
+
+foreach(string name in MuhammadsFamilyTree)
+{
+    Console.WriteLine(name);
 }
+
+Console.ReadLine();
