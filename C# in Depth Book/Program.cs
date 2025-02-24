@@ -156,9 +156,16 @@ foreach(int value in YieldType.Fibonacci())
     Console.WriteLine("Recieved value: {0}", item);
     
     if (item != null) break;
-}*/
+}
 
 foreach (int item in YieldType.GenerateIntegers(5))
+{
+    Console.WriteLine(item);
+}*/
+
+CsharpBuildInTypes strings = new CsharpBuildInTypes();
+
+foreach(string item in strings)
 {
     Console.WriteLine(item);
 }

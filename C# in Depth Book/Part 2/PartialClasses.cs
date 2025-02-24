@@ -1,4 +1,6 @@
-﻿namespace Part2
+﻿using System.Collections;
+
+namespace Part2
 {
     class PartialClasses
     {
@@ -18,4 +20,24 @@
         }
     }
 
+    public class CsharpBuildInTypes : IEnumerable<string>
+    {
+        public IEnumerator<string> GetEnumerator()
+        {
+            yield return "int";
+            yield return "double";
+            yield return "string";
+            yield return "bool";
+            yield return "obj";
+            yield return "decimal";
+            yield return "char";
+            yield return "byte";
+                
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
 }
