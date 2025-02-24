@@ -203,4 +203,11 @@ int a = 15;
 int b = 15;
 
 Console.WriteLine("hi");*/
-
+Main();
+unsafe static void Main()
+{
+    VersionedData versioned = new VersionedData();
+    versioned.Major = 2;
+    versioned.Minor = 1;
+    versioned.Data[10] = 300;
+}
