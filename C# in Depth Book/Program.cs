@@ -171,7 +171,7 @@ foreach(string item in strings)
     Console.WriteLine(item);
 }*/
 
-var MuhammadsFamilyTree = new BinaryTree<string>("Muhammad (S. A. W");
+/*var MuhammadsFamilyTree = new BinaryTree<string>("Muhammad (S. A. W");
 
 MuhammadsFamilyTree.SubItems = new Pair<BinaryTree<string>>(
     new BinaryTree<string>("Abdullah"),
@@ -192,4 +192,15 @@ foreach(string name in MuhammadsFamilyTree)
     Console.WriteLine(name);
 }
 
-Console.ReadLine();
+Console.ReadLine();*/
+
+/*#pragma warning disable CS0219
+
+int a = 15;
+
+#pragma warning restore CS0129
+
+int b = 15;
+
+Console.WriteLine("hi");*/
+
