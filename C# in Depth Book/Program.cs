@@ -224,7 +224,26 @@ Console.WriteLine(x);*/
 
 var capturedVariablesDemo = new CapturedVariablesDemo();
 
+/*Action<string> action = capturedVariablesDemo.CreateAction("passed param");
 
-capturedVariablesDemo.CreateAction("Hi, this came from Program.cs");
+action("invoked here");*/
 
-Console.WriteLine("Hi {1}, how are you doing {0}", "today", "Sam");
+/*Action action = capturedVariablesDemo.CreateAction();
+
+action();
+action();
+action();
+action();
+action();
+
+var actions = CapturedVariablesDemo.CreateActions();
+
+foreach(var oneAction in actions)
+{
+    oneAction();  
+}*/
+
+
+var chainingMethodCalls = new ChainingMethodCalls();
+
+chainingMethodCalls.Main();
