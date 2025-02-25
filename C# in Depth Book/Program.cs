@@ -226,3 +226,5 @@ var capturedVariablesDemo = new CapturedVariablesDemo();
 
 
 capturedVariablesDemo.CreateAction("Hi, this came from Program.cs");
+
+Console.WriteLine("Hi {1}, how are you doing {0}", "today", "Sam");
