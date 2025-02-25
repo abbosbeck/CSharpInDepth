@@ -217,6 +217,6 @@ using System.Linq.Expressions;
 
 var lambdaExpression = new LambdaExpressionManual();
 
-var a = lambdaExpression.square(15, 0);
+var a = lambdaExpression.square(15, "hii");
 
 Console.WriteLine(a);

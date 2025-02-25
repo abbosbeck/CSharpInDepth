@@ -2,6 +2,6 @@
 {
     public class LambdaExpressionManual
     {
-        public Func<int, int, int> square = (x, y) => x * y;
+        public Func<int, string, string> square = (x, y) => "Assalomu alaykum!";
     }
 }
