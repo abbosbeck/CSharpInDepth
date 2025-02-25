@@ -224,6 +224,21 @@ Console.WriteLine(x);*/
 
 var capturedVariablesDemo = new CapturedVariablesDemo();
 
-Action<string> action = capturedVariablesDemo.CreateAction("passed param");
+/*Action<string> action = capturedVariablesDemo.CreateAction("passed param");
 
-action("invoked here");
+action("invoked here");*/
+
+Action action = capturedVariablesDemo.CreateAction();
+
+action();
+action();
+action();
+action();
+action();
+
+var actions = CapturedVariablesDemo.CreateActions();
+
+foreach(var oneAction in actions)
+{
+    oneAction();  
+}
