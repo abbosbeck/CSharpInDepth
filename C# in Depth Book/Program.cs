@@ -215,8 +215,14 @@ unsafe static void Main()
 using Part3;
 using System.Linq.Expressions;
 
-var lambdaExpression = new LambdaExpressionManual();
+/*var lambdaExpression = new LambdaExpressionManual();
 
-var a = lambdaExpression.square(15, "hii");
+var a = lambdaExpression.square(15, 30);
 
-Console.WriteLine(a);
+foreach (var x in a)
+Console.WriteLine(x);*/
+
+var capturedVariablesDemo = new CapturedVariablesDemo();
+
+
+capturedVariablesDemo.CreateAction("Hi, this came from Program.cs");
