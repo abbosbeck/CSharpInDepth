@@ -224,7 +224,6 @@ Console.WriteLine(x);*/
 
 var capturedVariablesDemo = new CapturedVariablesDemo();
 
+Action<string> action = capturedVariablesDemo.CreateAction("passed param");
 
-capturedVariablesDemo.CreateAction("Hi, this came from Program.cs");
-
-Console.WriteLine("Hi {1}, how are you doing {0}", "today", "Sam");
+action("invoked here");
