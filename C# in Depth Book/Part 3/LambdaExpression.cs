@@ -52,5 +52,23 @@
             return actions;
         }
     }
-}
 
+    public class  ChainingMethodCalls
+    {
+        public void Main()
+        {
+            string[] words = { "keys", "coat", "laptop", "bottle" };
+
+            IEnumerable<string> query = words
+                .Where(word => word.Length > 4)
+                .OrderBy(word => word)
+                .Select(word => word.ToUpper());
+
+
+            foreach(string word in query)
+            {
+                Console.WriteLine(word);
+            }
+        }
+    }
+}

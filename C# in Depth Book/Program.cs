@@ -228,7 +228,7 @@ var capturedVariablesDemo = new CapturedVariablesDemo();
 
 action("invoked here");*/
 
-Action action = capturedVariablesDemo.CreateAction();
+/*Action action = capturedVariablesDemo.CreateAction();
 
 action();
 action();
@@ -241,4 +241,9 @@ var actions = CapturedVariablesDemo.CreateActions();
 foreach(var oneAction in actions)
 {
     oneAction();  
-}
+}*/
+
+
+var chainingMethodCalls = new ChainingMethodCalls();
+
+chainingMethodCalls.Main();
