@@ -1,4 +1,4 @@
-﻿namespace C__in_Depth_Book.Part_3
+﻿namespace Part3
 {
     public class AnonymousTypes
     {

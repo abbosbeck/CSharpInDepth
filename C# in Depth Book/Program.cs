@@ -212,3 +212,11 @@ unsafe static void Main()
     versioned.Data[10] = 300;
 }*/
 
+using Part3;
+using System.Linq.Expressions;
+
+var lambdaExpression = new LambdaExpressionManual();
+
+var a = lambdaExpression.square(15, 0);
+
+Console.WriteLine(a);
