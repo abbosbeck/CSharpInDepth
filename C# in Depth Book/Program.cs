@@ -248,4 +248,6 @@ foreach(var oneAction in actions)
 
 chainingMethodCalls.Main();*/
 
-DynamicTypes.Run();
+DynamicTypes.Run("text");
+DynamicTypes.Run(15);
+DynamicTypes.Run(TimeSpan.FromMinutes(45));
