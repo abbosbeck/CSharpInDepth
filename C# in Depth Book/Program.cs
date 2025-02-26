@@ -212,6 +212,7 @@ unsafe static void Main()
     versioned.Data[10] = 300;
 }*/
 
+using Part2;
 using Part3;
 using Part4;
 using System.Linq.Expressions;
@@ -248,6 +249,17 @@ foreach(var oneAction in actions)
 
 chainingMethodCalls.Main();*/
 
-DynamicTypes.Run("text");
+/*DynamicTypes.Run("text");
 DynamicTypes.Run(15);
 DynamicTypes.Run(TimeSpan.FromMinutes(45));
+
+*/
+/*
+object a = DynamicTypes.StaticValue;
+DynamicTypes.StaticValue = "changed string in calling method";
+
+object b = DynamicTypes.StaticValue; // b references "Hello world"
+Console.WriteLine(a); // Outputs "string"
+Console.WriteLine(b); // Outputs "Hello world"*/
+
+DynamicTypingDecompiled.Main();

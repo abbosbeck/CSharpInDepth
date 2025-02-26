@@ -2,6 +2,7 @@
 {
     public class DynamicTypes
     {
+        public static object StaticValue = "string";
         public static void Run(dynamic d)
         {
             /*dynamic text = "Hello, World!";
