@@ -53,7 +53,7 @@
         }
     }
 
-    public class  ChainingMethodCalls
+    public class ChainingMethodCalls
     {
         public void Main()
         {
@@ -65,7 +65,7 @@
                 .Select(word => word.ToUpper());
 
 
-            foreach(string word in query)
+            foreach (string word in query)
             {
                 Console.WriteLine(word);
             }
