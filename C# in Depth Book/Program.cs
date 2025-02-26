@@ -213,6 +213,7 @@ unsafe static void Main()
 }*/
 
 using Part3;
+using Part4;
 using System.Linq.Expressions;
 
 /*var lambdaExpression = new LambdaExpressionManual();
@@ -243,7 +244,10 @@ foreach(var oneAction in actions)
     oneAction();  
 }*/
 
+/*var chainingMethodCalls = new ChainingMethodCalls();
 
-var chainingMethodCalls = new ChainingMethodCalls();
+chainingMethodCalls.Main();*/
 
-chainingMethodCalls.Main();
+DynamicTypes.Run("text");
+DynamicTypes.Run(15);
+DynamicTypes.Run(TimeSpan.FromMinutes(45));
