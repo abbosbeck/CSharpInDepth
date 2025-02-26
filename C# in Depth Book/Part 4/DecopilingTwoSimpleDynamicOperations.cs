@@ -1,5 +1,4 @@
 ﻿using Microsoft.CSharp.RuntimeBinder;
-using System;
 using System.Runtime.CompilerServices;
 
 namespace Part4
@@ -23,15 +22,15 @@ namespace Part4
                 {
                      CSharpArgumentInfo.Create(
                       CSharpArgumentInfoFlags.None, null),
-                     
+
                     CSharpArgumentInfo.Create(
                       CSharpArgumentInfoFlags.Constant |
                         CSharpArgumentInfoFlags.UseCompileTimeType,
                       null)
                 };
-            CallSiteBinder binder =
-            Binder.InvokeMember(CSharpBinderFlags.None, "Substring",
-            null, typeof(DynamicTypingDecompiled), argumentInfo);
+                CallSiteBinder binder =
+                Binder.InvokeMember(CSharpBinderFlags.None, "Substring",
+                null, typeof(DynamicTypingDecompiled), argumentInfo);
                 CallSites.method =
             CallSite<Func<CallSite, object, int, object>>.Create(binder);
             }
@@ -40,12 +39,12 @@ namespace Part4
                 CallSiteBinder binder =
                 Binder.Convert(CSharpBinderFlags.None, typeof(string),
                 typeof(DynamicTypingDecompiled));
-                    CallSites.conversion =
-               CallSite<Func<CallSite, object, string>>.Create(binder);
+                CallSites.conversion =
+           CallSite<Func<CallSite, object, string>>.Create(binder);
             }
 
             object result = CallSites.method.Target(
-                CallSites.method, text, 6); 
+                CallSites.method, text, 6);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Part2.BinaryTree
             Second = second;
         }
 
-        public T First { get;  }
+        public T First { get; }
 
         public T Second { get; }
 
@@ -40,11 +40,11 @@ namespace Part2.BinaryTree
         {
             yield return Value;
 
-            foreach(BinaryTree<T> tree in SubItems)
+            foreach (BinaryTree<T> tree in SubItems)
             {
-                if(tree != null)
+                if (tree != null)
                 {
-                    foreach(T item in tree)
+                    foreach (T item in tree)
                     {
                         yield return item;
                     }

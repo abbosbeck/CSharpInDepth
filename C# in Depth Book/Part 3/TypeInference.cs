@@ -4,7 +4,7 @@
     {
         public void Run()
         {
-            var arrayExample = new[] { "a", "b"};
+            var arrayExample = new[] { "a", "b" };
         }
     }
 }

@@ -2,16 +2,17 @@
 {
     abstract class Animal
     {
-        public abstract void MakeSound(); 
-        public void Eat() => Console.WriteLine("Eating..."); 
+        public abstract void MakeSound();
+        public void Eat() => Console.WriteLine("Eating...");
     }
 
     interface IFlyable
     {
-        void Fly();  
+        void Fly();
     }
 
-    class Bird : Animal, IFlyable      {
+    class Bird : Animal, IFlyable
+    {
         public override void MakeSound()
         {
             Console.WriteLine("Chirp Chirp!");

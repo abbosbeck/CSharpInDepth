@@ -32,7 +32,7 @@ namespace Part2
             yield return "decimal";
             yield return "char";
             yield return "byte";
-                
+
         }
 
         IEnumerator IEnumerable.GetEnumerator()
