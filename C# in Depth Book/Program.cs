@@ -254,10 +254,12 @@ DynamicTypes.Run(15);
 DynamicTypes.Run(TimeSpan.FromMinutes(45));
 
 */
-
+/*
 object a = DynamicTypes.StaticValue;
 DynamicTypes.StaticValue = "changed string in calling method";
 
 object b = DynamicTypes.StaticValue; // b references "Hello world"
 Console.WriteLine(a); // Outputs "string"
-Console.WriteLine(b); // Outputs "Hello world"
+Console.WriteLine(b); // Outputs "Hello world"*/
+
+DynamicTypingDecompiled.Main();
