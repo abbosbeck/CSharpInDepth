@@ -266,8 +266,8 @@ Console.WriteLine(b); // Outputs "Hello world"*/
 
 
 int tmp = 0;
-OptionalParametrs.OptionalParametrsMethod(x: tmp++, y: tmp++, z: tmp++);
-OptionalParametrs.OptionalParametrsMethod(x: tmp++, y: tmp++, z: tmp++);
+OptionalParametrs.OptionalParametrsMethod(z: tmp++, x: tmp++, y: tmp++);
+OptionalParametrs.OptionalParametrsMethod();
 OptionalParametrs.OptionalParametrsMethod(10);
 OptionalParametrs.OptionalParametrsMethod();
 OptionalParametrs.OptionalParametrsMethod(y: 500);
