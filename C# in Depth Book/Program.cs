@@ -262,4 +262,13 @@ Console.WriteLine(b); // Outputs "Hello world"*/
 
 //DynamicTypingDecompiled.Main();
 
-Console.WriteLine(CallAnExtensionMethodOnADynamicTarget.Run());
+/*Console.WriteLine(CallAnExtensionMethodOnADynamicTarget.Run());*/
+
+
+int tmp = 0;
+OptionalParametrs.OptionalParametrsMethod(z: tmp++, x: tmp++, y: tmp++);
+OptionalParametrs.OptionalParametrsMethod();
+OptionalParametrs.OptionalParametrsMethod(10);
+OptionalParametrs.OptionalParametrsMethod();
+OptionalParametrs.OptionalParametrsMethod(y: 500);
+
