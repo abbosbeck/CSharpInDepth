@@ -260,4 +260,6 @@ object b = DynamicTypes.StaticValue; // b references "Hello world"
 Console.WriteLine(a); // Outputs "string"
 Console.WriteLine(b); // Outputs "Hello world"*/
 
-DynamicTypingDecompiled.Main();
+//DynamicTypingDecompiled.Main();
+
+Console.WriteLine(CallAnExtensionMethodOnADynamicTarget.Run());
