@@ -264,8 +264,10 @@ Console.WriteLine(b); // Outputs "Hello world"*/
 
 /*Console.WriteLine(CallAnExtensionMethodOnADynamicTarget.Run());*/
 
-OptionalParametrs.OptionalParametrsMethod(10, 20, 30);
-OptionalParametrs.OptionalParametrsMethod(10, 20);
+
+int tmp = 0;
+OptionalParametrs.OptionalParametrsMethod(x: tmp++, y: tmp++, z: tmp++);
+OptionalParametrs.OptionalParametrsMethod(x: tmp++, y: tmp++, z: tmp++);
 OptionalParametrs.OptionalParametrsMethod(10);
 OptionalParametrs.OptionalParametrsMethod();
 OptionalParametrs.OptionalParametrsMethod(y: 500);
