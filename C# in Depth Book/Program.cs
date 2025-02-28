@@ -214,6 +214,7 @@ unsafe static void Main()
 
 using Part3;
 using Part4;
+using Part5;
 
 /*var lambdaExpression = new LambdaExpressionManual();
 
@@ -265,10 +266,17 @@ Console.WriteLine(b); // Outputs "Hello world"*/
 /*Console.WriteLine(CallAnExtensionMethodOnADynamicTarget.Run());*/
 
 
-int tmp = 0;
+/*int tmp = 0;
 OptionalParametrs.OptionalParametrsMethod(z: tmp++, x: tmp++, y: tmp++);
 OptionalParametrs.OptionalParametrsMethod();
 OptionalParametrs.OptionalParametrsMethod(10);
 OptionalParametrs.OptionalParametrsMethod();
 OptionalParametrs.OptionalParametrsMethod(y: 500);
+*/
 
+
+var asyncMethod = AsyncAwait.CookDinnerAsync();
+
+Console.WriteLine("This task shouldn't wait for 5 seconds");
+
+await asyncMethod;
