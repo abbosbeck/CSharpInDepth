@@ -41,4 +41,19 @@
             Console.WriteLine("this is a dynamic typed method");
         }
     }
+
+    public class DifferenceBetweenDynamicTypesAndObject
+    {
+        public static void Main()
+        {
+            object a = "string";
+            object b = 15;
+            object c = TimeSpan.FromMinutes(45);
+            string aString = (string)a;
+            string bString = (string)b;
+
+            dynamic dynamicA = "string";
+            int dynamicB = dynamicA;
+        }
+    }
 }
