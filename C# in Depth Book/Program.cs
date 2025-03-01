@@ -273,20 +273,26 @@ OptionalParametrs.OptionalParametrsMethod();
 OptionalParametrs.OptionalParametrsMethod(y: 500);
 */
 
-
 /*var asyncMethod = AsyncAwait.CookDinnerAsync();
 
 Console.WriteLine("This task shouldn't wait for 5 seconds");
 
-await asyncMethod;*/
+await asyncMethod;
 
-/*Task<int> a = PageLengthInAnAsyncMethod.GetPageLength("https://daryo.uz/");
+Task<int> a = PageLengthInAnAsyncMethod.GetPageLength("https://daryo.uz/");
 
 Console.WriteLine("Probably this happens before next ");
 
 Console.WriteLine(a.Result);
 
 Console.WriteLine("this should happen after the result");
-Console.ReadLine();*/
+Console.ReadLine();
 
-await AsyncAwait.Main();
+Console.WriteLine(await AsyncAwait.Main());
+
+await ResultOfUnsafeCode.DelayWithResultOfUnsafeCode("Hello World!"); */
+
+Task task = AwaitingCompletedAndNonCompletedTasks.DemoCompleteAsync();
+Console.WriteLine("Method returned");
+task.Wait();
+Console.WriteLine("Task completed");
