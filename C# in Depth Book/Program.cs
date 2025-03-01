@@ -223,7 +223,7 @@ var a = lambdaExpression.square(15, 30);
 foreach (var x in a)
 Console.WriteLine(x);*/
 
-var capturedVariablesDemo = new CapturedVariablesDemo();
+/*var capturedVariablesDemo = new CapturedVariablesDemo();*/
 
 /*Action<string> action = capturedVariablesDemo.CreateAction("passed param");
 
@@ -261,10 +261,9 @@ object b = DynamicTypes.StaticValue; // b references "Hello world"
 Console.WriteLine(a); // Outputs "string"
 Console.WriteLine(b); // Outputs "Hello world"*/
 
-//DynamicTypingDecompiled.Main();
-
-/*Console.WriteLine(CallAnExtensionMethodOnADynamicTarget.Run());*/
-
+/*
+DynamicTypingDecompiled.Main();
+Console.WriteLine(CallAnExtensionMethodOnADynamicTarget.Run());*/
 
 /*int tmp = 0;
 OptionalParametrs.OptionalParametrsMethod(z: tmp++, x: tmp++, y: tmp++);
@@ -275,8 +274,19 @@ OptionalParametrs.OptionalParametrsMethod(y: 500);
 */
 
 
-var asyncMethod = AsyncAwait.CookDinnerAsync();
+/*var asyncMethod = AsyncAwait.CookDinnerAsync();
 
 Console.WriteLine("This task shouldn't wait for 5 seconds");
 
-await asyncMethod;
+await asyncMethod;*/
+
+/*Task<int> a = PageLengthInAnAsyncMethod.GetPageLength("https://daryo.uz/");
+
+Console.WriteLine("Probably this happens before next ");
+
+Console.WriteLine(a.Result);
+
+Console.WriteLine("this should happen after the result");
+Console.ReadLine();*/
+
+await AsyncAwait.Main();
