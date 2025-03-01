@@ -286,8 +286,13 @@ Console.WriteLine("Probably this happens before next ");
 Console.WriteLine(a.Result);
 
 Console.WriteLine("this should happen after the result");
-Console.ReadLine();*/
+Console.ReadLine();
 
-/*Console.WriteLine(await AsyncAwait.Main());*/
+Console.WriteLine(await AsyncAwait.Main());
 
-await ResultOfUnsafeCode.DelayWithResultOfUnsafeCode("Hello World!");
+await ResultOfUnsafeCode.DelayWithResultOfUnsafeCode("Hello World!"); */
+
+Task task = AwaitingCompletedAndNonCompletedTasks.DemoCompleteAsync();
+Console.WriteLine("Method returned");
+task.Wait();
+Console.WriteLine("Task completed");
