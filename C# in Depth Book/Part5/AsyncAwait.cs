@@ -8,5 +8,10 @@
             await Task.Delay(5000);
             Console.WriteLine("Adding pasta....");
         }
+
+        public static async Task Main()
+        {
+            await AsyncAwait.CookDinnerAsync();
+        }
     }
 }
