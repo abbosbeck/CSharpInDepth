@@ -280,6 +280,11 @@ Console.WriteLine("This task shouldn't wait for 5 seconds");
 
 await asyncMethod;*/
 
-await CookDinner.CookDinnerAsync();
+Task<int> a = PageLengthInAnAsyncMethod.GetPageLength("https://daryo.uz/");
 
+Console.WriteLine("Probably this happens before next ");
+
+Console.WriteLine(a.Result);
+
+Console.WriteLine("this should happen after the result");
 Console.ReadLine();
