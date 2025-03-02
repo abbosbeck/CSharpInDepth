@@ -290,9 +290,18 @@ Console.ReadLine();
 
 Console.WriteLine(await AsyncAwait.Main());
 
-await ResultOfUnsafeCode.DelayWithResultOfUnsafeCode("Hello World!"); */
+await ResultOfUnsafeCode.DelayWithResultOfUnsafeCode("Hello World!"); 
 
 Task task = AwaitingCompletedAndNonCompletedTasks.DemoCompleteAsync();
 Console.WriteLine("Method returned");
 task.Wait();
 Console.WriteLine("Task completed");
+
+var task1 = TwoAsyncMethods.FirstTask();
+var task2 = TwoAsyncMethods.SecondTask();
+
+await Task.WhenAll(task1, task2);
+
+TwoAsyncMethods.WithoutAsync();*/
+
+await BreakFastTask.Caller();
