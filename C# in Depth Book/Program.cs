@@ -215,6 +215,7 @@ unsafe static void Main()
 using Part3;
 using Part4;
 using Part5;
+using SOLID;
 
 /*var lambdaExpression = new LambdaExpressionManual();
 
@@ -271,13 +272,20 @@ OptionalParametrs.OptionalParametrsMethod();
 OptionalParametrs.OptionalParametrsMethod(10);
 OptionalParametrs.OptionalParametrsMethod();
 OptionalParametrs.OptionalParametrsMethod(y: 500);
-*/
+
 
 /*var asyncMethod = AsyncAwait.CookDinnerAsync();
 
 Console.WriteLine("This task shouldn't wait for 5 seconds");
 
-await asyncMethod;
+
+await asyncMethod; 
+
+var enquiry = new Enquiry();
+
+enquiry.Add();
+
+await asyncMethod; 
 
 Task<int> a = PageLengthInAnAsyncMethod.GetPageLength("https://daryo.uz/");
 
