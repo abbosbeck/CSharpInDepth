@@ -1,4 +1,4 @@
-﻿namespace C__in_Depth_Book.SOLID
+﻿namespace SOLID
 {
     // Single Responsiblity Principle (SRP)
     class Customer
