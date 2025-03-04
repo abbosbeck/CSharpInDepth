@@ -48,27 +48,4 @@
             return TotalSales;
         }
     }
-
-    class GoldCustomer : Customer
-    {
-        public override double GetDiscount(double TotalSales)
-        {
-            return base.GetDiscount(TotalSales) - 100;
-        }
-    }
-    class SilverCustomer : Customer
-    {
-        public override double GetDiscount(double TotalSales)
-        {
-            return base.GetDiscount(TotalSales) - 10;
-        }
-    }
-
-    class FileLogger
-    {
-        public void Handle (Exception ex) 
-        {
-            File.WriteAllText(@"C:\Error.txt", ex.Message); 
-        }
-    }
 }
