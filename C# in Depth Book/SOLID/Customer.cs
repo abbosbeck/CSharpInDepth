@@ -31,6 +31,37 @@
                                    // Our main (customer) class doesn't have unnecessary responsibilites
             }
         }
+
+        public int CustomerType { get; set; }
+        public double CustomerDiscount(double TotalSales) 
+        {
+            if (CustomerType == 0)
+                return TotalSales - 100;
+            else
+                return TotalSales - 10; 
+            // this is not a good idea, it is violating Open/Closed Peinciple (OCP)
+            // The method should be closed to any kind of modification and opened to extention
+        }
+
+        public virtual double GetDiscount(double TotalSales) 
+        {
+            return TotalSales;
+        }
+    }
+
+    class GoldCustomer : Customer
+    {
+        public override double GetDiscount(double TotalSales)
+        {
+            return base.GetDiscount(TotalSales) - 100;
+        }
+    }
+    class SilverCustomer : Customer
+    {
+        public override double GetDiscount(double TotalSales)
+        {
+            return base.GetDiscount(TotalSales) - 10;
+        }
     }
 
     class FileLogger
