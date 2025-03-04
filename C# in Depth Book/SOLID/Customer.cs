@@ -1,10 +1,10 @@
 ﻿namespace SOLID
 {
     // Single Responsiblity Principle (SRP)
-    class Customer
+    public class Customer
     {
         private FileLogger logger = new FileLogger();
-        public void Add()
+        public virtual void Add()
         {
             try
             {
