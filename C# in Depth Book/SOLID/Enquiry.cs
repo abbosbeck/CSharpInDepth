@@ -17,4 +17,14 @@
             // Don't force classes to implement unnecessary methods. Istead, create small Interface 
         }
     }
+
+    public class EnquiryLSP : IDiscount
+    {
+        public double GetDiscount(double TotalSales)
+        {
+            return TotalSales - 5; 
+
+            // this is good idea. Enquiry, indeed, was not a child of Customer. 
+        }
+    }
 }
