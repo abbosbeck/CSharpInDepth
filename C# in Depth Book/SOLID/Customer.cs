@@ -17,7 +17,7 @@
             }
         }
 
-        public void Remove() 
+        public void Remove()
         {
             try
             {
@@ -33,17 +33,17 @@
         }
 
         public int CustomerType { get; set; }
-        public double CustomerDiscount(double TotalSales) 
+        public double CustomerDiscount(double TotalSales)
         {
             if (CustomerType == 0)
                 return TotalSales - 100;
             else
-                return TotalSales - 10; 
+                return TotalSales - 10;
             // this is not a good idea, it is violating Open/Closed Peinciple (OCP)
             // The method should be closed to any kind of modification and opened to extention
         }
 
-        public virtual double GetDiscount(double TotalSales) 
+        public virtual double GetDiscount(double TotalSales)
         {
             return TotalSales;
         }

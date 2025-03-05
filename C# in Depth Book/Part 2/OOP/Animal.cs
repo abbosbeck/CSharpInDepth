@@ -7,7 +7,7 @@
             Console.WriteLine("Animal speaks...");
         }
 
-        protected internal virtual void Speak2() { } 
+        protected internal virtual void Speak2() { }
     }
 
     public class Cat : Animal

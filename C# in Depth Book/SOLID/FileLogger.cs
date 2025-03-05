@@ -2,9 +2,9 @@
 {
     class FileLogger
     {
-        public void Handle (Exception ex) 
+        public void Handle(Exception ex)
         {
-            File.WriteAllText(@"C:\Error.txt", ex.Message); 
+            File.WriteAllText(@"C:\Error.txt", ex.Message);
         }
     }
 }

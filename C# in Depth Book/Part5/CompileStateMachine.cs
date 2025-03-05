@@ -11,15 +11,15 @@ namespace Part5
         {
             try
             {
-                if(State == 0)
+                if (State == 0)
                 {
                     Console.WriteLine("Boiling water");
                     Awaiter = Task.Delay(5000).GetAwaiter();
-                    if(!Awaiter.IsCompleted)
+                    if (!Awaiter.IsCompleted)
                     {
                         State = 1;
                         Builder.AwaitOnCompleted(ref Awaiter, ref this);
-                        
+
                         return;
                     }
                 }

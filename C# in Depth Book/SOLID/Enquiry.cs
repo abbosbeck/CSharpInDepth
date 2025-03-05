@@ -22,7 +22,7 @@
     {
         public double GetDiscount(double TotalSales)
         {
-            return TotalSales - 5; 
+            return TotalSales - 5;
 
             // this is good idea. Enquiry, indeed, was not a child of Customer. 
         }
