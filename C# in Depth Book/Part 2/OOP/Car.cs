@@ -4,10 +4,10 @@
     {
         public Car()
         {
-            
+
         }
 
-        public string MyProperty 
+        public string MyProperty
         {
             get
             {
@@ -15,10 +15,10 @@
             }
             set
             {
-                if(value == "new")
+                if (value == "new")
                     text = "This value cannot be new";
                 text = value;
-            } 
+            }
         }
 
         public DateTime Year { get; init; }

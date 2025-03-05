@@ -213,10 +213,6 @@ unsafe static void Main()
 }*/
 
 using Part2.OOP;
-using Part3;
-using Part4;
-using Part5;
-using SOLID;
 
 /*var lambdaExpression = new LambdaExpressionManual();
 
@@ -313,8 +309,15 @@ await Task.WhenAll(task1, task2);
 
 TwoAsyncMethods.WithoutAsync();
 
-await BreakFastTask.Caller(); */
+await BreakFastTask.Caller(); 
 
 var cat = new Cat();
 
 cat.Speak();
+
+var constructorChain = new ConstructorChain();
+
+Console.WriteLine(constructorChain.Year);
+Console.WriteLine(constructorChain.Brand);*/
+
+var cat = new Cat();

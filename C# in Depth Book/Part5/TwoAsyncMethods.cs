@@ -5,7 +5,7 @@
         public static async Task FirstTask()
         {
             Console.WriteLine("Firs task has been started");
-            await Task.Delay(2/8);
+            await Task.Delay(2 / 8);
             Console.WriteLine("First task has been finished....");
         }
 

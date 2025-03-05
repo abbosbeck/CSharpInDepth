@@ -5,12 +5,12 @@
         static readonly HttpClient client = new HttpClient();
         public static async Task<int> GetPageLength(string url)
         {
-           /* Console.WriteLine("Fetching page length...");
-            Task<string> fetchTextTask = client.GetStringAsync("http://www.microsoft.com");
-            Console.WriteLine("Doing other work...");
-            int length = (await fetchTextTask).Length;
-            Console.WriteLine("Page length is " + length);
-            return length;*/
+            /* Console.WriteLine("Fetching page length...");
+             Task<string> fetchTextTask = client.GetStringAsync("http://www.microsoft.com");
+             Console.WriteLine("Doing other work...");
+             int length = (await fetchTextTask).Length;
+             Console.WriteLine("Page length is " + length);
+             return length;*/
 
 
             Task<string> fetchTextTask = client.GetStringAsync(url);
