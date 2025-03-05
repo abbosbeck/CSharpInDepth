@@ -21,6 +21,21 @@
             } 
         }
 
+        public DateTime Year { get; init; }
+
         private string text;
+    }
+
+    class Caller
+    {
+        void Main()
+        {
+            var car = new Car()
+            {
+                Year = DateTime.Now,
+            };
+
+            //car.Year = DateTime.Now; You cannot give a value for Year here, because it is init only 
+        }
     }
 }

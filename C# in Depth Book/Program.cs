@@ -212,6 +212,7 @@ unsafe static void Main()
     versioned.Data[10] = 300;
 }*/
 
+using Part2.OOP;
 using Part3;
 using Part4;
 using Part5;
@@ -310,6 +311,10 @@ var task2 = TwoAsyncMethods.SecondTask();
 
 await Task.WhenAll(task1, task2);
 
-TwoAsyncMethods.WithoutAsync();*/
+TwoAsyncMethods.WithoutAsync();
 
-await BreakFastTask.Caller();
+await BreakFastTask.Caller(); */
+
+var cat = new Cat();
+
+cat.Speak();
