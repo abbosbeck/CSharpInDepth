@@ -321,3 +321,5 @@ Console.WriteLine(constructorChain.Year);
 Console.WriteLine(constructorChain.Brand);*/
 
 var cat = new Cat();
+
+cat.Show();

@@ -11,7 +11,8 @@
             Console.WriteLine("Animal speaks...");
         }
 
-        protected internal virtual void Speak2() { }
+        protected void Show() => Console.WriteLine("This is a message from the Base Class..");
+
     }
 
     public class Cat : Animal
@@ -25,5 +26,7 @@
             base.Speak();
             Console.WriteLine("Meow!");
         }
+
+        public new void Show() => Console.WriteLine("This message is from the Child class");
     }
 }
