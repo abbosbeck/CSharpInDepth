@@ -309,8 +309,13 @@ await Task.WhenAll(task1, task2);
 
 TwoAsyncMethods.WithoutAsync();
 
-await BreakFastTask.Caller(); */
+await BreakFastTask.Caller(); 
 
 var cat = new Cat();
 
-cat.Speak();
+cat.Speak();*/
+
+var constructorChain = new ConstructorChain("This should be another one", 1999);
+
+Console.WriteLine(constructorChain.Year);
+Console.WriteLine(constructorChain.Brand);
