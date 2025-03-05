@@ -2,6 +2,10 @@
 {
     public class Animal
     {
+        public Animal(string text)
+        {
+            Console.WriteLine($"This message ``{text}`` came from child class");
+        }
         protected internal virtual void Speak()
         {
             Console.WriteLine("Animal speaks...");
@@ -12,6 +16,10 @@
 
     public class Cat : Animal
     {
+        public Cat() : base("Hiiii")
+        {
+            
+        }
         protected internal override void Speak()
         {
             base.Speak();

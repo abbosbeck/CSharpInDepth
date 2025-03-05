@@ -313,9 +313,11 @@ await BreakFastTask.Caller();
 
 var cat = new Cat();
 
-cat.Speak();*/
+cat.Speak();
 
 var constructorChain = new ConstructorChain();
 
 Console.WriteLine(constructorChain.Year);
-Console.WriteLine(constructorChain.Brand);
+Console.WriteLine(constructorChain.Brand);*/
+
+var cat = new Cat();
