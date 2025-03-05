@@ -315,7 +315,7 @@ var cat = new Cat();
 
 cat.Speak();*/
 
-var constructorChain = new ConstructorChain("This should be another one", 1999);
+var constructorChain = new ConstructorChain();
 
 Console.WriteLine(constructorChain.Year);
 Console.WriteLine(constructorChain.Brand);
