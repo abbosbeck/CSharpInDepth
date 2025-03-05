@@ -11,7 +11,7 @@
             Console.WriteLine("Animal speaks...");
         }
 
-        public void Show() => Console.WriteLine("This is a message from the Base Class..");
+        protected void Show() => Console.WriteLine("This is a message from the Base Class..");
 
     }
 
@@ -27,6 +27,6 @@
             Console.WriteLine("Meow!");
         }
 
-        public void Show(string text) => Console.WriteLine("This message is from the Child class");
+        public new void Show() => Console.WriteLine("This message is from the Child class");
     }
 }
