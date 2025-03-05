@@ -7,7 +7,7 @@
 
         public ConstructorChain() : this("Unknown", 2020)
         {
-            Console.WriteLine("Default Constructor Called here");   
+            Console.WriteLine("Default Constructor Called here");
         }
         public ConstructorChain(string brand) : this(brand, 2022)
         {

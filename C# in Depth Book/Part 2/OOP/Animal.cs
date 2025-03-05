@@ -18,7 +18,7 @@
     {
         public Cat() : base("Hiiii")
         {
-            
+
         }
         protected internal override void Speak()
         {
