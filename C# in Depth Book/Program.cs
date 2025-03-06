@@ -213,7 +213,6 @@ unsafe static void Main()
 }*/
 
 using Part2.DesignPatters.DAODesignPattern;
-using Part2.OOP;
 
 /*var lambdaExpression = new LambdaExpressionManual();
 
