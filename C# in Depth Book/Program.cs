@@ -318,8 +318,12 @@ cat.Speak();
 var constructorChain = new ConstructorChain();
 
 Console.WriteLine(constructorChain.Year);
-Console.WriteLine(constructorChain.Brand);*/
+Console.WriteLine(constructorChain.Brand);
 
 var cat = new Cat();
 
-cat.Show();
+cat.Show();*/
+
+var student = new Student();
+student.Speak(); // this can be an example for late biding, because run-time calls Speak method,
+                 // not Complier-time checks this
