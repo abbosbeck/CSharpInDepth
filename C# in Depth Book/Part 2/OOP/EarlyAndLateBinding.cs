@@ -6,7 +6,7 @@
 
     public class Person
     {
-        public virtual void Speak() 
+        public virtual void Speak()
         {
             Console.WriteLine("Person is speaking");
         }

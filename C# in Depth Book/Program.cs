@@ -213,7 +213,6 @@ unsafe static void Main()
 }*/
 
 using Part2.OOP;
-using System;
 
 /*var lambdaExpression = new LambdaExpressionManual();
 
