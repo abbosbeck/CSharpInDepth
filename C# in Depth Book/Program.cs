@@ -213,6 +213,7 @@ unsafe static void Main()
 }*/
 
 using Part2.OOP;
+using System;
 
 /*var lambdaExpression = new LambdaExpressionManual();
 
@@ -327,3 +328,5 @@ cat.Show();*/
 var student = new Student();
 student.Speak(); // this can be an example for late biding, because run-time calls Speak method,
                  // not Complier-time checks this
+
+
