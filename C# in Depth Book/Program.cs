@@ -212,6 +212,7 @@ unsafe static void Main()
     versioned.Data[10] = 300;
 }*/
 
+using Part2.DesignPatters.DAODesignPattern;
 using Part2.OOP;
 
 /*var lambdaExpression = new LambdaExpressionManual();
@@ -322,10 +323,14 @@ Console.WriteLine(constructorChain.Brand);
 
 var cat = new Cat();
 
-cat.Show();*/
+cat.Show();
 
 var student = new Student();
 student.Speak(); // this can be an example for late biding, because run-time calls Speak method,
                  // not Complier-time checks this
+*/
 
+var bookDAO = new BookDAO();
+
+bookDAO.GetById(1);
 
