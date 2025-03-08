@@ -4,20 +4,20 @@ namespace Part2.OOP
 {
     public class AccessModifiers
     {
-        protected internal class FromSameAssembly
+        public class FromSameAssembly
         {
 
         }
     }
-}
 
-namespace Part2.OOP.test
-{
-    internal class Testing : FromSameAssembly
+    public class B : AccessModifiers
     {
-        void Main()
+        static B()
         {
-            GC.Collect();
+            
         }
+
+        static int a = 15;
     }
 }
+
