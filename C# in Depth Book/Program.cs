@@ -340,7 +340,7 @@ RefAndOut.ModifyValue(ref number);
 
 Console.WriteLine(number); */
 
-int a;
+int a = 100;
 
 RefAndOut.Divide(15, 3, out a);
 
