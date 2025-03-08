@@ -213,6 +213,7 @@ unsafe static void Main()
 }*/
 
 using Part2.DesignPatters.DAODesignPattern;
+using Part2.OOP;
 
 /*var lambdaExpression = new LambdaExpressionManual();
 
@@ -327,9 +328,15 @@ cat.Show();
 var student = new Student();
 student.Speak(); // this can be an example for late biding, because run-time calls Speak method,
                  // not Complier-time checks this
-*/
+
 
 var bookDAO = new BookDAO();
 
-bookDAO.GetById(1);
+bookDAO.GetById(1);*/
+
+int number = 15;
+
+RefAndOut.ModifyValue(ref number);
+
+Console.WriteLine(number);
 
