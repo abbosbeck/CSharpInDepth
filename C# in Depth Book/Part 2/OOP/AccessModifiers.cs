@@ -15,6 +15,9 @@ namespace Part2.OOP.test
 {
     internal class Testing : FromSameAssembly
     {
-
+        void Main()
+        {
+            GC.Collect();
+        }
     }
 }
