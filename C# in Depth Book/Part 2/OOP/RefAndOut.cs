@@ -6,5 +6,10 @@
         {
             number = 0;
         }
+
+        public static void Divide(int a, int b, out int result) 
+        {
+            result = a / b;
+        }
     }
 }

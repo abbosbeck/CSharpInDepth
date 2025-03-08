@@ -332,11 +332,17 @@ student.Speak(); // this can be an example for late biding, because run-time cal
 
 var bookDAO = new BookDAO();
 
-bookDAO.GetById(1);*/
+bookDAO.GetById(1);
 
 int number = 15;
 
 RefAndOut.ModifyValue(ref number);
 
-Console.WriteLine(number);
+Console.WriteLine(number); */
+
+int a;
+
+RefAndOut.Divide(15, 3, out a);
+
+Console.WriteLine(a);
 
