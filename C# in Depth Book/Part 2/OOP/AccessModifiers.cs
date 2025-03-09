@@ -1,6 +1,4 @@
-﻿using static Part2.OOP.AccessModifiers;
-
-namespace Part2.OOP
+﻿namespace Part2.OOP
 {
     public class AccessModifiers
     {
@@ -14,7 +12,7 @@ namespace Part2.OOP
     {
         static B()
         {
-            
+
         }
 
         static int a = 15;

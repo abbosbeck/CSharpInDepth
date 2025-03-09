@@ -7,7 +7,7 @@
             number = 0;
         }
 
-        public static void Divide(int a, int b, out int result) 
+        public static void Divide(int a, int b, out int result)
         {
             int t = a / b;
 

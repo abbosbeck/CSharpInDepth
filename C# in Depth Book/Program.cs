@@ -212,10 +212,6 @@ unsafe static void Main()
     versioned.Data[10] = 300;
 }*/
 
-using C__in_Depth_Book.Part_2.PerformanceTests;
-using Part2;
-using Part2.DesignPatters.DAODesignPattern;
-using Part2.OOP;
 using Part2.Types;
 
 /*var lambdaExpression = new LambdaExpressionManual();

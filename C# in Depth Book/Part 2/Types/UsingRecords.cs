@@ -4,14 +4,18 @@
     {
         public static void Main()
         {
-            var person1 = new Person(name: "Abbos", 21);
-            var person2 = new Person("Abbos", 21);
+            var person1 = new Person { Name = "Abbos", Age = 21 };
+            var person2 = new Person { Name = "Abbos", Age = 21 };
 
-            person1 = person1 with { name = "New Name" };
+            var newPerson = person1 with { Name = "New Name" };
 
-            Console.WriteLine(person1 == person2);
+            Console.WriteLine(person2.Age);
         }
 
-        public record Person(string name, int age);
+        public record Person
+        {
+            public string Name { get; set; } = "";
+            public int Age { get; init; } = 15;
+        }
     }
 }
