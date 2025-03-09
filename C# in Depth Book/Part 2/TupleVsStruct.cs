@@ -4,9 +4,9 @@
     {
         public static void Main()
         {
-            var person = ("Abbos", 21, true);
+            var person = (Name: "Abbos", Age: 21, isStudent: true);
 
-            Console.WriteLine(person.Item1);
+            Console.WriteLine(person.isStudent);
         }
     }
 }
