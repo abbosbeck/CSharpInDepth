@@ -4,10 +4,12 @@
     {
         public static void Main()
         {
-            var person1 = (Name: "Abbos", Age: 21);
-            var person2 = (Name: "Abbos", Age: 21);
+            var person1 = new Person(name: "Abbos", 21);
+            var person2 = new Person("Abbos", 21);
 
             Console.WriteLine(person1 == person2);
         }
+
+        public record Person(string name, int age);
     }
 }
