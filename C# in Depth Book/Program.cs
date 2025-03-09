@@ -213,8 +213,10 @@ unsafe static void Main()
 }*/
 
 using C__in_Depth_Book.Part_2.PerformanceTests;
+using Part2;
 using Part2.DesignPatters.DAODesignPattern;
 using Part2.OOP;
+using Part2.Types;
 
 /*var lambdaExpression = new LambdaExpressionManual();
 
@@ -345,7 +347,7 @@ int a = 100;
 
 RefAndOut.Divide(15, 3, out a);
 
-Console.WriteLine(a); */
+Console.WriteLine(a); 
 
 Task<double> stringTask = Task.Run(StringVsStringBuilder.StringPerformance);
 Task<double> stringBuilder = Task.Run(StringVsStringBuilder.StringBuilderPerformance);
@@ -355,3 +357,8 @@ double stringBuilderTime = await stringBuilder;
 
 Console.WriteLine($"String Time: {stringTime} ms");
 Console.WriteLine($"StringBuilder Time: {stringBuilderTime} ms");
+
+TupleVsStruct.Main(); */
+
+UsingRecords.Main();
+
