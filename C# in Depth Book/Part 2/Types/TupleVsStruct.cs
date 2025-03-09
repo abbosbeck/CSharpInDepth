@@ -1,4 +1,4 @@
-﻿namespace Part2
+﻿namespace Part2.Types
 {
     public class TupleVsStruct
     {

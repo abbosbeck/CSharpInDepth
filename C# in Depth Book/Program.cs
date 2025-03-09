@@ -216,6 +216,7 @@ using C__in_Depth_Book.Part_2.PerformanceTests;
 using Part2;
 using Part2.DesignPatters.DAODesignPattern;
 using Part2.OOP;
+using Part2.Types;
 
 /*var lambdaExpression = new LambdaExpressionManual();
 
@@ -355,6 +356,9 @@ double stringTime = await stringTask;
 double stringBuilderTime = await stringBuilder;
 
 Console.WriteLine($"String Time: {stringTime} ms");
-Console.WriteLine($"StringBuilder Time: {stringBuilderTime} ms");*/
+Console.WriteLine($"StringBuilder Time: {stringBuilderTime} ms");
 
-TupleVsStruct.Main();
+TupleVsStruct.Main(); */
+
+UsingRecords.Main();
+
