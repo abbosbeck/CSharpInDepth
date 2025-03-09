@@ -10,7 +10,7 @@ namespace C__in_Depth_Book.Part_2.PerformanceTests
             Stopwatch sw = Stopwatch.StartNew();
             string str = "";
 
-            for(int i = 0; i < 10000; i++)
+            for (int i = 0; i < 10000; i++)
             {
                 str += i.ToString();
             }
