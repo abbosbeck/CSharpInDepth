@@ -212,6 +212,7 @@ unsafe static void Main()
     versioned.Data[10] = 300;
 }*/
 
+using C__in_Depth_Book.Part_2.PerformanceTests;
 using Part2.DesignPatters.DAODesignPattern;
 using Part2.OOP;
 
@@ -338,11 +339,19 @@ int number = 15;
 
 RefAndOut.ModifyValue(ref number);
 
-Console.WriteLine(number); */
+Console.WriteLine(number); 
 
 int a = 100;
 
 RefAndOut.Divide(15, 3, out a);
 
-Console.WriteLine(a);
+Console.WriteLine(a); */
 
+Task<double> stringTask = Task.Run(StringVsStringBuilder.StringPerformance);
+Task<double> stringBuilder = Task.Run(StringVsStringBuilder.StringBuilderPerformance);
+
+double stringTime = await stringTask;
+double stringBuilderTime = await stringBuilder;
+
+Console.WriteLine($"String Time: {stringTime} ms");
+Console.WriteLine($"StringBuilder Time: {stringBuilderTime} ms");
