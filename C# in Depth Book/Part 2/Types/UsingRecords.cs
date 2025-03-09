@@ -2,6 +2,11 @@
 {
     public class UsingRecords
     {
+        protected internal class SomethingElse
+        {
+
+        }
+
         public static void Main()
         {
             var person1 = new Person { Name = "Abbos", Age = 21 };
@@ -17,5 +22,10 @@
             public string Name { get; set; } = "";
             public int Age { get; init; } = 15;
         }
+    }
+
+    internal class ChildClass : UsingRecords.SomethingElse
+    {
+
     }
 }

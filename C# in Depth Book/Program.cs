@@ -212,6 +212,7 @@ unsafe static void Main()
     versioned.Data[10] = 300;
 }*/
 
+using Part2.OOP;
 using Part2.Types;
 
 /*var lambdaExpression = new LambdaExpressionManual();
@@ -354,7 +355,11 @@ double stringBuilderTime = await stringBuilder;
 Console.WriteLine($"String Time: {stringTime} ms");
 Console.WriteLine($"StringBuilder Time: {stringBuilderTime} ms");
 
-TupleVsStruct.Main(); */
+TupleVsStruct.Main(); 
 
 UsingRecords.Main();
+*/
 
+IOne interfaceCaller = new InterfaceCaller();
+
+interfaceCaller.Sum(5, 6);
