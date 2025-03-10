@@ -212,6 +212,7 @@ unsafe static void Main()
     versioned.Data[10] = 300;
 }*/
 
+using Part2.DesignPatters;
 using Part2.OOP;
 using Part2.Types;
 
@@ -358,8 +359,22 @@ Console.WriteLine($"StringBuilder Time: {stringBuilderTime} ms");
 TupleVsStruct.Main(); 
 
 UsingRecords.Main();
-*/
 
 IOne interfaceCaller = new InterfaceCaller();
 
-interfaceCaller.Sum(5, 6);
+interfaceCaller.Sum(5, 6);*/
+
+
+IVehicle vehicle1 = VehicleFactory.GetVehicle("Car");
+
+vehicle1.Drive();
+
+
+IVehicle vehicle2 = VehicleFactory.GetVehicle("Bike");
+
+vehicle2.Drive();
+
+
+IVehicle vehicle3 = VehicleFactory.GetVehicle("Samara");
+
+vehicle3.Drive();
