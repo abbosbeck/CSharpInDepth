@@ -6,5 +6,10 @@
         {
             Console.WriteLine("What is going on..");
         }
+
+        public void Sum(int a, int b)
+        {
+            Console.WriteLine("This message is from Class...");
+        }
     }
 }
