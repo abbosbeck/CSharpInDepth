@@ -212,6 +212,10 @@ unsafe static void Main()
     versioned.Data[10] = 300;
 }*/
 
+using Part2.DesignPatters;
+using Part2.DesignPatters.StrategyPattern;
+using Part2.OOP;
+using Part2.Types;
 using Part2.OOP.ConstructorChainWithMuhammadqodir;
 
 /*var lambdaExpression = new LambdaExpressionManual();
@@ -327,6 +331,7 @@ cat.Show();
 var student = new Student();
 student.Speak(); // this can be an example for late biding, because run-time calls Speak method,
                  // not Complier-time checks this
+*/
 
 
 var bookDAO = new BookDAO();
@@ -337,3 +342,52 @@ var consChain = new ConstructorChain();
 
 var consChain2 = new ConstructorChain("Abbos", 5);
 
+int number = 15;
+
+RefAndOut.ModifyValue(ref number);
+
+Console.WriteLine(number); 
+
+int a = 100;
+
+RefAndOut.Divide(15, 3, out a);
+
+Console.WriteLine(a); 
+
+Task<double> stringTask = Task.Run(StringVsStringBuilder.StringPerformance);
+Task<double> stringBuilder = Task.Run(StringVsStringBuilder.StringBuilderPerformance);
+
+double stringTime = await stringTask;
+double stringBuilderTime = await stringBuilder;
+
+Console.WriteLine($"String Time: {stringTime} ms");
+Console.WriteLine($"StringBuilder Time: {stringBuilderTime} ms");
+
+TupleVsStruct.Main(); 
+
+UsingRecords.Main();
+
+IOne interfaceCaller = new InterfaceCaller();
+
+interfaceCaller.Sum(5, 6);
+
+
+IVehicle vehicle1 = VehicleFactory.GetVehicle("Car");
+
+vehicle1.Drive();
+
+
+IVehicle vehicle2 = VehicleFactory.GetVehicle("Bike");
+
+vehicle2.Drive();
+
+
+IVehicle vehicle3 = VehicleFactory.GetVehicle("Samara");
+
+vehicle3.Drive();*/
+
+var pay = new ShoppingCard();
+
+
+pay.SetPaymentStrategy(new CashPayment());
+pay.Checkout(100);
