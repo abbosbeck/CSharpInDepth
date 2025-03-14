@@ -212,7 +212,6 @@ unsafe static void Main()
     versioned.Data[10] = 300;
 }*/
 
-using Part2.DesignPatters.DAODesignPattern;
 using Part2.OOP.ConstructorChainWithMuhammadqodir;
 
 /*var lambdaExpression = new LambdaExpressionManual();
