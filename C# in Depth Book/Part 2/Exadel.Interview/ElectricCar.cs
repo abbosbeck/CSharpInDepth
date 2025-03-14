@@ -1,0 +1,10 @@
+﻿namespace Part2.Exadel.Interview
+{
+    public class ElectricCar
+    {
+        public async Task ChargeAsync()
+        {
+            await Task.Delay(300000);
+        }
+    }
+}
