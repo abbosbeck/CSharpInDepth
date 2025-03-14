@@ -216,6 +216,7 @@ using Part2.DesignPatters;
 using Part2.DesignPatters.StrategyPattern;
 using Part2.OOP;
 using Part2.Types;
+using Part2.OOP.ConstructorChainWithMuhammadqodir;
 
 /*var lambdaExpression = new LambdaExpressionManual();
 
@@ -330,11 +331,16 @@ cat.Show();
 var student = new Student();
 student.Speak(); // this can be an example for late biding, because run-time calls Speak method,
                  // not Complier-time checks this
+*/
 
 
 var bookDAO = new BookDAO();
 
-bookDAO.GetById(1);
+bookDAO.GetById(1); */
+
+var consChain = new ConstructorChain();
+
+var consChain2 = new ConstructorChain("Abbos", 5);
 
 int number = 15;
 
