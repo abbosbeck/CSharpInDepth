@@ -2,7 +2,7 @@
 {
     public class CarService
     {
-        public async Task ChargeAllCarsAsync(List<ElectricCar> cars)
+        public async Task ChargeAllCarsAsync(IEnumerable<ElectricCar> cars)
         {
             foreach (var car in cars)
             {
