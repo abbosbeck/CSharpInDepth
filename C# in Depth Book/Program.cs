@@ -215,8 +215,8 @@ unsafe static void Main()
 using Part2.DesignPatters;
 using Part2.DesignPatters.StrategyPattern;
 using Part2.OOP;
-using Part2.Types;
 using Part2.OOP.ConstructorChainWithMuhammadqodir;
+using Part2.Types;
 
 /*var lambdaExpression = new LambdaExpressionManual();
 
@@ -346,13 +346,13 @@ int number = 15;
 
 RefAndOut.ModifyValue(ref number);
 
-Console.WriteLine(number); 
+Console.WriteLine(number);
 
 int a = 100;
 
 RefAndOut.Divide(15, 3, out a);
 
-Console.WriteLine(a); 
+Console.WriteLine(a);
 
 Task<double> stringTask = Task.Run(StringVsStringBuilder.StringPerformance);
 Task<double> stringBuilder = Task.Run(StringVsStringBuilder.StringBuilderPerformance);
@@ -363,7 +363,7 @@ double stringBuilderTime = await stringBuilder;
 Console.WriteLine($"String Time: {stringTime} ms");
 Console.WriteLine($"StringBuilder Time: {stringBuilderTime} ms");
 
-TupleVsStruct.Main(); 
+TupleVsStruct.Main();
 
 UsingRecords.Main();
 
@@ -384,7 +384,7 @@ vehicle2.Drive();
 
 IVehicle vehicle3 = VehicleFactory.GetVehicle("Samara");
 
-vehicle3.Drive();*/
+vehicle3.Drive(); */
 
 var pay = new ShoppingCard();
 

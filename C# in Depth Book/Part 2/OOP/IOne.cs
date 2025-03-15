@@ -2,9 +2,9 @@
 {
     public interface IOne
     {
-        public void Sum(int a , int b)
-         {
-             Console.WriteLine( a + b);
-         }
+        public void Sum(int a, int b)
+        {
+            Console.WriteLine(a + b);
+        }
     }
 }
