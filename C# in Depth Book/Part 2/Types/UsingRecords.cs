@@ -7,7 +7,7 @@
 
         }
 
-        public static void Main()
+        public static void MainMethod()
         {
             var person1 = new Person { Name = "Abbos", Age = 21 };
             var person2 = new Person { Name = "Abbos", Age = 21 };

@@ -331,12 +331,12 @@ cat.Show();
 var student = new Student();
 student.Speak(); // this can be an example for late biding, because run-time calls Speak method,
                  // not Complier-time checks this
-*/
+
 
 
 var bookDAO = new BookDAO();
 
-bookDAO.GetById(1); */
+bookDAO.GetById(1);
 
 var consChain = new ConstructorChain();
 
@@ -384,10 +384,11 @@ vehicle2.Drive();
 
 IVehicle vehicle3 = VehicleFactory.GetVehicle("Samara");
 
-vehicle3.Drive(); */
+vehicle3.Drive(); 
 
 var pay = new ShoppingCard();
 
 
 pay.SetPaymentStrategy(new CashPayment());
 pay.Checkout(100);
+*/
