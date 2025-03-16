@@ -212,12 +212,6 @@ unsafe static void Main()
     versioned.Data[10] = 300;
 }*/
 
-using Part2.DesignPatters;
-using Part2.DesignPatters.StrategyPattern;
-using Part2.OOP;
-using Part2.OOP.ConstructorChainWithMuhammadqodir;
-using Part2.Types;
-
 /*var lambdaExpression = new LambdaExpressionManual();
 
 var a = lambdaExpression.square(15, 30);
@@ -331,12 +325,12 @@ cat.Show();
 var student = new Student();
 student.Speak(); // this can be an example for late biding, because run-time calls Speak method,
                  // not Complier-time checks this
-*/
+
 
 
 var bookDAO = new BookDAO();
 
-bookDAO.GetById(1); */
+bookDAO.GetById(1);
 
 var consChain = new ConstructorChain();
 
@@ -384,10 +378,11 @@ vehicle2.Drive();
 
 IVehicle vehicle3 = VehicleFactory.GetVehicle("Samara");
 
-vehicle3.Drive(); */
+vehicle3.Drive(); 
 
 var pay = new ShoppingCard();
 
 
 pay.SetPaymentStrategy(new CashPayment());
 pay.Checkout(100);
+*/

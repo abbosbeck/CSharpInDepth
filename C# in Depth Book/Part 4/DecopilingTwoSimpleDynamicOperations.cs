@@ -13,7 +13,7 @@ namespace Part4
                conversion;
         }
 
-        public static void Main()
+        public static void MainMethod()
         {
             object text = "hello world";
             if (CallSites.method == null)
