@@ -1,5 +1,4 @@
 using AspDotNetInDepth.Middlewares;
-using AspDotNetInDepth.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
