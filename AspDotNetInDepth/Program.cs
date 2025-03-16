@@ -1,3 +1,5 @@
+using AspDotNetInDepth.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -22,9 +24,17 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+List<Game> games = new List<Game>()
+{
+    new Game { Id = 1, Name = "Game 1", Price = 100 },
+    new Game { Id = 2, Name = "Game 2", Price = 200 },
+    new Game { Id = 3, Name = "Game 3", Price = 300 }
+};
+
 //app.MapGet("games", () => games);
 
 app.MapGet("/", () => "Hello World!");
 app.MapGet("/user/{id}", (int id) => $"User ID: {id}");
+
 
 app.Run();
