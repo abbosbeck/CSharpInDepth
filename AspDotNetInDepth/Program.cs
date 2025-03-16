@@ -37,11 +37,12 @@ app.MapGet("/", () => "Hello World!");
 app.MapGet("/user/{id}", (int id) => $"User ID: {id}");
 
 //PUT /games/1
-app.MapGet("games/{id}", (int id, Game updatedGame) =>
+app.MapPut("games/{id}", (int id, Game updatedGame) =>
 {
     int index = games.FindIndex(g => g.Id == id);
+    Console.WriteLine("It is working here");
 
-    games[index] = updatedGame;
+    games[index].Name = updatedGame.Name;
 
     return Results.NoContent();
 

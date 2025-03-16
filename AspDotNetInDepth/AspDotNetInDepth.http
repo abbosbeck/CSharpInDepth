@@ -12,3 +12,12 @@ Accept: application/json
 
 GET {{AspDotNetInDepth_HostAddress}}/WeatherForecast/
 Accept: application/json
+
+###
+
+PUT {{AspDotNetInDepth_HostAddress}}/games/1
+Content-Type: application/json
+
+{
+    "Name": "Street Fighter II Turbo",
+}
