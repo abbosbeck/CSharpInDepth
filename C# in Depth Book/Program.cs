@@ -212,12 +212,6 @@ unsafe static void Main()
     versioned.Data[10] = 300;
 }*/
 
-using Part2.DesignPatters;
-using Part2.DesignPatters.StrategyPattern;
-using Part2.OOP;
-using Part2.OOP.ConstructorChainWithMuhammadqodir;
-using Part2.Types;
-
 /*var lambdaExpression = new LambdaExpressionManual();
 
 var a = lambdaExpression.square(15, 30);
