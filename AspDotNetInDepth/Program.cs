@@ -36,6 +36,13 @@ List<Game> games = new List<Game>()
 app.MapGet("/", () => "Hello World!");
 app.MapGet("/user/{id}", (int id) => $"User ID: {id}");
 
+app.MapGet("async/", async () =>
+{
+    Console.WriteLine("Before Async");
+    await Task.Delay(10000);
+    return "Hello, World! Async worked here";
+});
+
 //PUT /games/1
 app.MapPut("games/{id}", (int id, Game updatedGame) =>
 {
