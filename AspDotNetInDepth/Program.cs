@@ -1,3 +1,4 @@
+using AspDotNetInDepth.Middlewares;
 using AspDotNetInDepth.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,8 @@ builder.Services.AddEndpointsApiExplorer();
 /*builder.Services.AddSwaggerGen();*/
 
 var app = builder.Build();
+
+app.UseMiddleware<CustomMiddleware>();
 
 // Middleware 1: Logging
 app.Use(async (context, next) =>
@@ -46,5 +49,9 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.Run(async context =>
+{
+    await context.Response.WriteAsync("Hello from Termianl Middleware!");
+});
 
 app.Run();
