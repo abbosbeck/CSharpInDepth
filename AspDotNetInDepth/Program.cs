@@ -25,5 +25,6 @@ app.MapControllers();
 //app.MapGet("games", () => games);
 
 app.MapGet("/", () => "Hello World!");
+app.MapGet("/user/{id}", (int id) => $"User ID: {id}");
 
 app.Run();
