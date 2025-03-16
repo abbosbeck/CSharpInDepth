@@ -11,8 +11,6 @@ builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 
-app.UseMiddleware<CustomMiddleware>();
-
 // Middleware 1: Logging
 app.Use(async (context, next) =>
 {
@@ -28,12 +26,15 @@ app.Use(async (context, next) =>
     await next();
 });
 
+app.UseMiddleware<CustomMiddleware>();
+
 // Middleware 3: Terminal Middleware (Handles request)
 app.Run(async (context) =>
 {
     Console.WriteLine("Middleware 3: Request handled");
     await context.Response.WriteAsync("Hello, World!");
 });
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
