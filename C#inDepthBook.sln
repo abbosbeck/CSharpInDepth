@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C#inDepthBook", "C# in Depth Book\C#inDepthBook.csproj", "{0DB37256-FE3F-4F18-B594-29F301EE2434}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspDotNetInDepth", "AspDotNetInDepth\AspDotNetInDepth.csproj", "{04A98191-BA1C-4C06-9F62-21F5150D6176}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0DB37256-FE3F-4F18-B594-29F301EE2434}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DB37256-FE3F-4F18-B594-29F301EE2434}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DB37256-FE3F-4F18-B594-29F301EE2434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04A98191-BA1C-4C06-9F62-21F5150D6176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04A98191-BA1C-4C06-9F62-21F5150D6176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04A98191-BA1C-4C06-9F62-21F5150D6176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04A98191-BA1C-4C06-9F62-21F5150D6176}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
