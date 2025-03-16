@@ -36,5 +36,15 @@ List<Game> games = new List<Game>()
 app.MapGet("/", () => "Hello World!");
 app.MapGet("/user/{id}", (int id) => $"User ID: {id}");
 
+//PUT /games/1
+app.MapGet("games/{id}", (int id, Game updatedGame) =>
+{
+    int index = games.FindIndex(g => g.Id == id);
+
+    games[index] = updatedGame;
+
+    return Results.NoContent();
+
+});
 
 app.Run();
