@@ -1,4 +1,5 @@
 ﻿using AspDotNetInDepth.ExceptionFilters;
+using AspDotNetInDepth.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspDotNetInDepth.Controllers
@@ -13,6 +14,18 @@ namespace AspDotNetInDepth.Controllers
         public IActionResult ThrowError()
         {
             throw new Exception("This is a test exception!");
+        }
+
+        [HttpPost]
+        public IActionResult CreateGameFromBody([FromBody] Game game)
+        {
+            return Ok($"Game with a name {game.Name} is valid and {game.Price} costs.");
+        }
+
+        [HttpPost("/new/type")]
+        public IActionResult CreateGameFromHeader([FromHeader] Game game)
+        {
+            return Ok($"Game with a name {game.Name} is valid and {game.Price} costs.");
         }
     }
 }
