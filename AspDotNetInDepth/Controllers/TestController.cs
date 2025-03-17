@@ -1,5 +1,4 @@
-﻿using AspDotNetInDepth.ExceptionFilters;
-using AspDotNetInDepth.Models;
+﻿using AspDotNetInDepth.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspDotNetInDepth.Controllers
@@ -10,7 +9,7 @@ namespace AspDotNetInDepth.Controllers
     public class TestController : ControllerBase
     {
         [HttpGet("throw")]
-       // [ServiceFilter(typeof(CustomExceptionFilter))]
+        // [ServiceFilter(typeof(CustomExceptionFilter))]
         public IActionResult ThrowError()
         {
             throw new Exception("This is a test exception!");
