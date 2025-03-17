@@ -21,6 +21,7 @@ namespace AspDotNetInDepth.ExceptionFilters
             {
                 ArgumentException => (400, "Invalid request"),
                 UnauthorizedAccessException => (401, "Unauthorized"),
+                // You can add and manipluate many exception here
                 _ => (500, "Something went wrong!")
             };
 
