@@ -32,7 +32,7 @@ namespace AspDotNetInDepth.Middlewares
         {
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-            
+
             var response = new
             {
                 StatusCode = context.Response.StatusCode,
@@ -41,6 +41,6 @@ namespace AspDotNetInDepth.Middlewares
             };
 
             return context.Response.WriteAsJsonAsync(response);
-        }   
+        }
     }
 }
