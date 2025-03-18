@@ -1,4 +1,13 @@
-using AspDotNetInDepth.ExceptionFilters;
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.MapGet("/", () => "Hello, Minimal API!");
+app.MapGet("/greet/{name}", (string name) => $"Hello, {name}!");
+app.MapPost("/add", (int a, int b) => Results.Json(new { sum = a + b }));
+
+app.Run();
+
+/*using AspDotNetInDepth.ExceptionFilters;
 using AspDotNetInDepth.Middlewares;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
@@ -60,3 +69,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+*/
