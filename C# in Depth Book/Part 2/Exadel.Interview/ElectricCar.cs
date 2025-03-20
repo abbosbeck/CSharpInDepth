@@ -4,7 +4,7 @@
     {
         public async Task ChargeAsync()
         {
-            await Task.Delay(300000);
+            await Task.Delay(TimeSpan.FromMinutes(5));
         }
     }
 }
