@@ -382,7 +382,7 @@ var pay = new ShoppingCard();
 
 pay.SetPaymentStrategy(new CashPayment());
 pay.Checkout(100);
-*/
+
 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -395,4 +395,4 @@ var host = Host.CreateDefaultBuilder()
         })
         .Build();
 
-await host.RunAsync();
+await host.RunAsync();*/
