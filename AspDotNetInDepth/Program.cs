@@ -1,4 +1,32 @@
+using System.Net.WebSockets;
 
+var builder = WebApplication.CreateBuilder(args); 
+var app = builder.Build();
+
+var webSocketOptions = new WebSocketOptions()
+{
+    KeepAliveInterval = TimeSpan.FromSeconds(120),
+};
+app.UseWebSockets(webSocketOptions);
+
+// WebSocket endpoint middleware
+app.Map("/ws", async context =>
+{
+    if (context.WebSockets.IsWebSocketRequest)
+    {
+        using WebSocket webSocket = await context.WebSockets.AcceptWebSocketAsync();
+        await Echo(webSocket);
+    }
+    else
+    {
+        context.Response.StatusCode = 400;
+    }
+});
+
+async Task Echo(WebSocket webSocket)
+{
+    throw new NotImplementedException();
+}
 
 // V1
 /*using AspDotNetInDepth.ExceptionFilters;
