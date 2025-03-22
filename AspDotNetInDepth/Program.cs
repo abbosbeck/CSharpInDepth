@@ -1,12 +1,51 @@
-var builder = WebApplication.CreateBuilder(args);
+using AspDotNetInDepth;
+using System.Net.WebSockets;
+
+var builder = WebApplication.CreateBuilder(args); 
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello, Minimal API!");
-app.MapGet("/greet/{name}", (string name) => $"Hello, {name}!");
-app.MapPost("/add", (int a, int b) => Results.Json(new { sum = a + b }));
+var webSocketOptions = new WebSocketOptions()
+{
+    KeepAliveInterval = TimeSpan.FromSeconds(120),
+};
+app.UseWebSockets(webSocketOptions);
+
+// WebSocket endpoint middleware
+app.Map("/ws", async context =>
+{
+    if (context.WebSockets.IsWebSocketRequest)
+    {
+        using WebSocket webSocket = await context.WebSockets.AcceptWebSocketAsync();
+        await Echo(webSocket);
+    }
+    else
+    {
+        context.Response.StatusCode = 400;
+    }
+
+    var connection = new ConnectWebSocket();
+
+    await connection.ConnectWebSocketAsync();
+});
+
+async Task Echo(WebSocket webSocket)
+{
+    var buffer = new byte[1024 * 4];
+    WebSocketReceiveResult result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
+    while (!result.CloseStatus.HasValue)
+    {
+        // Echo the message back
+        await webSocket.SendAsync(new ArraySegment<byte>(buffer, 0, result.Count), result.MessageType, result.EndOfMessage, CancellationToken.None);
+        result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
+    }
+
+    // Close the connection (WebSocket)
+    await webSocket.CloseAsync(result.CloseStatus.Value, result.CloseStatusDescription, CancellationToken.None);
+}
 
 app.Run();
 
+// V1
 /*using AspDotNetInDepth.ExceptionFilters;
 using AspDotNetInDepth.Middlewares;
 using Microsoft.AspNetCore.Mvc;
