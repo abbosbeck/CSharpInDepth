@@ -1,4 +1,7 @@
-using AspDotNetInDepth.ExceptionFilters;
+
+
+// V1
+/*using AspDotNetInDepth.ExceptionFilters;
 using AspDotNetInDepth.Middlewares;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
@@ -60,3 +63,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+*/
