@@ -1,3 +1,4 @@
+using AspDotNetInDepth;
 using System.Net.WebSockets;
 
 var builder = WebApplication.CreateBuilder(args); 
@@ -21,6 +22,10 @@ app.Map("/ws", async context =>
     {
         context.Response.StatusCode = 400;
     }
+
+    var connection = new ConnectWebSocket();
+
+    await connection.ConnectWebSocketAsync();
 });
 
 async Task Echo(WebSocket webSocket)
