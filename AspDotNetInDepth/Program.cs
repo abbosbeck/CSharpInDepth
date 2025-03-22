@@ -28,14 +28,23 @@ app.MapGet("/greet/{name}", (string name) => $"Hello, {name}!");
 app.MapPost("/add", (int a, int b) => Results.Json(new { sum = a + b }));
 async Task Echo(WebSocket webSocket)
 {
-    throw new NotImplementedException();
+    var buffer = new byte[1024 * 4];
+    WebSocketReceiveResult result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
+    while (!result.CloseStatus.HasValue)
+    {
+        // Echo the message back
+        await webSocket.SendAsync(new ArraySegment<byte>(buffer, 0, result.Count), result.MessageType, result.EndOfMessage, CancellationToken.None);
+        result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
+    }
+
+    // Close the connection (WebSocket)
+    await webSocket.CloseAsync(result.CloseStatus.Value, result.CloseStatusDescription, CancellationToken.None);
 }
 
 app.Run();
-*/
 
-using AspDotNetInDepth.DataAccess;
-using AspDotNetInDepth.ExceptionFilters;
+// V1
+/*using AspDotNetInDepth.ExceptionFilters;
 using AspDotNetInDepth.Middlewares;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
