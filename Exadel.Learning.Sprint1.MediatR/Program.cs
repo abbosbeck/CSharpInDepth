@@ -7,6 +7,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddMediatR(configuration =>
+{
+    configuration.RegisterServicesFromAssembly(typeof(Program).Assembly);
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
