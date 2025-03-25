@@ -1,4 +1,4 @@
-using Exadel.Learning.Sprint1.MediatR.Futures.WeatherForecastSomething;
+using Exadel.Learning.Sprint1.MediatR.Futures.WeatherForecastSomething.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
