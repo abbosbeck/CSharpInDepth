@@ -45,6 +45,7 @@ app.Run();
 */
 
 
+using AspDotNetInDepth.ExceptionFilters;
 using AspDotNetInDepth.Middlewares;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
@@ -85,11 +86,6 @@ var app = builder.Build();
 //app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseMiddleware<CustomMiddleware>();
 
-/*app.Services.AddDbContext<PlayersDBContext>(options => options.UseInMemory);*/
-app.Services.AddMediatR(configuration =>
-{
-    configuration.
-});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
