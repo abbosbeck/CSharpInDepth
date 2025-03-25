@@ -48,6 +48,7 @@ async Task Echo(WebSocket webSocket)
 
 app.Run();
 
+using AspDotNetInDepth.ExceptionFilters;
 // V1
 /*using AspDotNetInDepth.ExceptionFilters;
 using AspDotNetInDepth.Middlewares;
@@ -90,11 +91,6 @@ var app = builder.Build();
 //app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseMiddleware<CustomMiddleware>();
 
-/*app.Services.AddDbContext<PlayersDBContext>(options => options.UseInMemory);*/
-app.Services.AddMediatR(configuration =>
-{
-    configuration.
-});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
