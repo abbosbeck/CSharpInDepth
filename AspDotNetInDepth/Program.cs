@@ -1,7 +1,5 @@
-using AspDotNetInDepth;
-using System.Net.WebSockets;
-
-var builder = WebApplication.CreateBuilder(args); 
+/*
+var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
 var webSocketOptions = new WebSocketOptions()
@@ -44,13 +42,14 @@ async Task Echo(WebSocket webSocket)
 }
 
 app.Run();
+*/
 
-// V1
-/*using AspDotNetInDepth.ExceptionFilters;
+
 using AspDotNetInDepth.Middlewares;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -86,6 +85,12 @@ var app = builder.Build();
 //app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseMiddleware<CustomMiddleware>();
 
+/*app.Services.AddDbContext<PlayersDBContext>(options => options.UseInMemory);*/
+app.Services.AddMediatR(configuration =>
+{
+    configuration.
+});
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -108,4 +113,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-*/

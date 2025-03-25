@@ -16,15 +16,15 @@ namespace AspDotNetInDepth.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateGameFromBody([FromBody] Game game)
+        public IActionResult CreateGameFromBody([FromBody] Player game)
         {
-            return Ok($"Game with a name {game.Name} is valid and {game.Price} costs.");
+            return Ok($"Game with a name {game.Name} is valid and {game.Level} costs.");
         }
 
         [HttpPost("/new/type")]
-        public IActionResult CreateGameFromHeader([FromHeader] Game game)
+        public IActionResult CreateGameFromHeader([FromHeader] Player game)
         {
-            return Ok($"Game with a name {game.Name} is valid and {game.Price} costs.");
+            return Ok($"Game with a name {game.Name} is valid and {game.Level} costs.");
         }
     }
 }
