@@ -1,10 +1,11 @@
-﻿using MediatR;
+﻿using Exadel.Learning.Sprint1.MediatR.Futures.WeatherForecastSomething.Commands;
+using MediatR;
 
-namespace Exadel.Learning.Sprint1.MediatR.Futures.WeatherForecastSomething.Commands
+namespace Exadel.Learning.Sprint1.MediatR.Futures.WeatherForecastSomething.Handlers
 {
     public class CreateWeatherForecastHandler : IRequestHandler<CreateWeatherForecastCommand, WeatherForecast>
     {
-        private static readonly List<WeatherForecast> _forecasts = new(); 
+        private static readonly List<WeatherForecast> _forecasts = new();
         public async Task<WeatherForecast> Handle(CreateWeatherForecastCommand request, CancellationToken cancellationToken)
         {
             var newForcast = new WeatherForecast
