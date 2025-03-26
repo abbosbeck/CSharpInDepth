@@ -2,7 +2,8 @@ namespace Exadel.Learning.Sprint1.MediatR
 {
     public class WeatherForecast
     {
-        public DateOnly Date { get; set; }
+        public int Id { get; set; }
+        public string Date { get; set; }
 
         public int TemperatureC { get; set; }
 

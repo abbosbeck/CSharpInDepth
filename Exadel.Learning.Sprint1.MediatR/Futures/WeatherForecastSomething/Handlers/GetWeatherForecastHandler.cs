@@ -1,6 +1,7 @@
-﻿using MediatR;
+﻿using Exadel.Learning.Sprint1.MediatR.Futures.WeatherForecastSomething.Queries;
+using MediatR;
 
-namespace Exadel.Learning.Sprint1.MediatR.Futures.WeatherForecastSomething
+namespace Exadel.Learning.Sprint1.MediatR.Futures.WeatherForecastSomething.Handlers
 {
     public class GetWeatherForecastHandler : IRequestHandler<WeatherForecastQuery, IEnumerable<WeatherForecast>>
     {
@@ -12,7 +13,7 @@ namespace Exadel.Learning.Sprint1.MediatR.Futures.WeatherForecastSomething
         {
             var forecast = Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                Date = "Something",
                 TemperatureC = Random.Shared.Next(-20, 55),
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             });

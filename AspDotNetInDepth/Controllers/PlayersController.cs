@@ -20,7 +20,7 @@ public class PlayersController : ControllerBase
     {
         _dbContext.Players.Add(player);
         await _dbContext.SaveChangesAsync();
-        
+
         return Ok(player.Id);
     }
 
