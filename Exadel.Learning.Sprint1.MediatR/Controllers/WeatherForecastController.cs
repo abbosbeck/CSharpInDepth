@@ -22,7 +22,7 @@ namespace Exadel.Learning.Sprint1.MediatR.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateForcastAsync(CreateWeatherForecastCommand command)
+        public async Task<IActionResult> CreateForecastAsync(CreateWeatherForecastCommand command)
         {
             var result = await _sender.Send(command);
             
@@ -31,6 +31,14 @@ namespace Exadel.Learning.Sprint1.MediatR.Controllers
 
         [HttpPut]
         public async Task<IActionResult> UpdateWeatherForcast(UpdateWeatherForecastCommand command)
+        {
+            var result = await _sender.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteForecastAsync(DeleteWeatherForecastCommand command)
         {
             var result = await _sender.Send(command);
 
