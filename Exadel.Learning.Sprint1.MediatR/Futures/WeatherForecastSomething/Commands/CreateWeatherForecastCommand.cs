@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Microsoft.VisualBasic;
 
 namespace Exadel.Learning.Sprint1.MediatR.Futures.WeatherForecastSomething.Commands
 {

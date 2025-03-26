@@ -5,8 +5,8 @@ namespace AspDotNetInDepth.DataAccess;
 
 public class PlayersDBContext : DbContext
 {
-    public PlayersDBContext(DbContextOptions<PlayersDBContext> options) 
+    public PlayersDBContext(DbContextOptions<PlayersDBContext> options)
         : base(options) { }
 
-    public DbSet<Player> Players { get; set; }  
+    public DbSet<Player> Players { get; set; }
 }
