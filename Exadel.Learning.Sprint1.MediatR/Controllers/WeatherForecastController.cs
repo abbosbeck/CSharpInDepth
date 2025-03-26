@@ -25,7 +25,7 @@ namespace Exadel.Learning.Sprint1.MediatR.Controllers
         public async Task<IActionResult> CreateForecastAsync(CreateWeatherForecastCommand command)
         {
             var result = await _sender.Send(command);
-            
+
             return Ok(result);
         }
 
