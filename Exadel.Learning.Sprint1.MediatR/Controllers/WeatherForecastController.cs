@@ -5,26 +5,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Exadel.Learning.Sprint1.MediatR.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class WeatherForecastController(ISender mediator) : ApiControllerBase(mediator)
     {
-        private ISender _sender;
-        public WeatherForecastController(ISender sender)
-        {
-            _sender = sender;
-        }
 
         [HttpGet(Name = "GetWeatherForecast")]
         public async Task<IEnumerable<WeatherForecast>> Get()
         {
-            return await _sender.Send(new WeatherForecastQuery());
+            return await mediator.Send(new WeatherForecastQuery());
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateForecastAsync(CreateWeatherForecastCommand command)
         {
-            var result = await _sender.Send(command);
+            var result = await mediator.Send(command);
 
             return Ok(result);
         }
@@ -32,7 +25,7 @@ namespace Exadel.Learning.Sprint1.MediatR.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateWeatherForcast(UpdateWeatherForecastCommand command)
         {
-            var result = await _sender.Send(command);
+            var result = await mediator.Send(command);
 
             return Ok(result);
         }
@@ -40,7 +33,7 @@ namespace Exadel.Learning.Sprint1.MediatR.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeleteForecastAsync(DeleteWeatherForecastCommand command)
         {
-            var result = await _sender.Send(command);
+            var result = await mediator.Send(command);
 
             return Ok(result);
         }
