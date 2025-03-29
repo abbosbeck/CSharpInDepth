@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "C#inDepthBook", "C# in Depth Book\C#inDepthBook.csproj", "{0DB37256-FE3F-4F18-B594-29F301EE2434}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspDotNetInDepth", "AspDotNetInDepth\AspDotNetInDepth.csproj", "{04A98191-BA1C-4C06-9F62-21F5150D6176}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exadel.Learning.Sprint1.MediatR", "Exadel.Learning.Sprint1.MediatR\Exadel.Learning.Sprint1.MediatR.csproj", "{3DC9723F-D8D9-4798-B1B3-87883DFF638C}"
 EndProject
 Global
@@ -15,14 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0DB37256-FE3F-4F18-B594-29F301EE2434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0DB37256-FE3F-4F18-B594-29F301EE2434}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0DB37256-FE3F-4F18-B594-29F301EE2434}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0DB37256-FE3F-4F18-B594-29F301EE2434}.Release|Any CPU.Build.0 = Release|Any CPU
-		{04A98191-BA1C-4C06-9F62-21F5150D6176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04A98191-BA1C-4C06-9F62-21F5150D6176}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04A98191-BA1C-4C06-9F62-21F5150D6176}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04A98191-BA1C-4C06-9F62-21F5150D6176}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3DC9723F-D8D9-4798-B1B3-87883DFF638C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3DC9723F-D8D9-4798-B1B3-87883DFF638C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DC9723F-D8D9-4798-B1B3-87883DFF638C}.Release|Any CPU.ActiveCfg = Release|Any CPU
