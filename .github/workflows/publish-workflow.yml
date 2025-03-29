@@ -45,7 +45,7 @@ jobs:
         with:
           push: true
           tags: ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_APP_NAME }}:${{ github.sha }}
-          file: C#inDepthBook.Api/Dockerfile
+          file: Exadel.Learning.Sprint1.MediatR/Dockerfile
 
       - name: Azure Login
         uses: azure/login@v2
