@@ -24,6 +24,9 @@ jobs:
         with:
           dotnet-version: "8.0.x"
 
+      - name: Restore NuGet packages
+        run: dotnet restore C#inDepthBook.sln
+        
       - name: Build
         run: dotnet build --no-restore C#inDepthBook.sln
 
