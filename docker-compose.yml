@@ -1,0 +1,11 @@
+services:
+  exadel.learning.sprint1.mediatr:
+    image: ${DOCKER_REGISTRY-}exadellearningsprint1mediatr
+    build:
+      context: .
+      dockerfile: Exadel.Learning.Sprint1.MediatR/Dockerfile
+    ports:
+        - "5000:5000"
+        - "5001:5001"
+        
+  
