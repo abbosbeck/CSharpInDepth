@@ -33,6 +33,7 @@ jobs:
         run: dotnet build --no-restore C#inDepthBook.sln
 
   deploy-to-azure-container-apps:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
