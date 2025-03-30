@@ -1,0 +1,15 @@
+name: Build Project, Run tests, Deploy
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+  call-build:
+    uses: ./.github/workflows/build.yml
+  call-publish-workflow:
+    needs: call-build
+    uses: ./.github/workflows/publish-workflow.yml
