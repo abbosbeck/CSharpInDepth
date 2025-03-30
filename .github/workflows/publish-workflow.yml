@@ -2,10 +2,6 @@ name: Deploy to Azure Container Apps
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [ "master" ]
 
 env:
   AZURE_CONTAINER_REGISTRY: bookmanagement
