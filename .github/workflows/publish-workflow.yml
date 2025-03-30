@@ -2,10 +2,7 @@ name: Deploy to Azure Container Apps
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [ "master" ]
+  workflow_call:
 
 env:
   AZURE_CONTAINER_REGISTRY: bookmanagement
@@ -13,7 +10,7 @@ env:
   RESOURCE_GROUP: ExadelBootcamp
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
