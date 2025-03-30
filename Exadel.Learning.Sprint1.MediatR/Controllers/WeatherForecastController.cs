@@ -14,13 +14,13 @@ namespace Exadel.Learning.Sprint1.MediatR.Controllers
             return await mediator.Send(new WeatherForecastQuery());
         }
 
-        /*[HttpPost]
+        [HttpPost]
         public async Task<IActionResult> CreateForecastAsync(CreateWeatherForecastCommand command)
         {
             var result = await mediator.Send(command);
 
             return Ok(result);
-        }*/
+        }
 
         [HttpPut]
         public async Task<IActionResult> UpdateWeatherForcast(UpdateWeatherForecastCommand command)
