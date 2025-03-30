@@ -1,6 +1,12 @@
-name: Deploy to Azure Container Apps
+name: Build, Test Deploy to Azure Container Apps
 
 on:
+  push:
+    branches: [main]
+ 
+  pull_request:
+    branches: [ "master" ]
+
   workflow_dispatch:
 
 env:
@@ -9,7 +15,24 @@ env:
   RESOURCE_GROUP: ExadelBootcamp
 
 jobs:
-  build-and-deploy:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Restore NuGet packages
+        run: dotnet restore C#inDepthBook.sln
+        
+      - name: Build
+        run: dotnet build --no-restore C#inDepthBook.sln
+
+  deploy-to-azure-container-apps:
     runs-on: ubuntu-latest
 
     steps:
