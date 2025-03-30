@@ -9,7 +9,7 @@ on:
 
 env:
   AZURE_CONTAINER_REGISTRY: bookmanagement
-  CONTAINER_APP_NAME: bookmanagement
+  CONTAINER_APP_NAME: signalr
   RESOURCE_GROUP: ExadelBootcamp
 
 jobs:
