@@ -1,6 +1,0 @@
-@Exadel.Learning.Sprint1.MediatR_HostAddress = http://localhost:5160
-
-GET {{Exadel.Learning.Sprint1.MediatR_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
