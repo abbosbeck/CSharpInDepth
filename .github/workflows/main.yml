@@ -2,10 +2,10 @@ name: Build, Test Deploy to Azure Container Apps
 
 on:
   push:
-    branches: [main]
+    branches: ["users/abbosbeck/publish-to-azure"]
  
   pull_request:
-    branches: [ "master" ]
+    branches: [ "users/abbosbeck/publish-to-azure" ]
 
   workflow_dispatch:
 
