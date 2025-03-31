@@ -1,0 +1,6 @@
+@CSharpInDepth.UserIdentity_HostAddress = http://localhost:5098
+
+GET {{CSharpInDepth.UserIdentity_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
