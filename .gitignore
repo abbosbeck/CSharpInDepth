@@ -398,3 +398,12 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/CSharpInDepth/CSharpInDepth.UserIdentity/obj/Debug/net9.0/CSharpInDepth.UserIdentity.AssemblyInfo.cs
+/CSharpInDepth/CSharpInDepth.UserIdentity/obj/Debug/net9.0/CSharpInDepth.UserIdentity.AssemblyInfoInputs.cache
+/CSharpInDepth/CSharpInDepth.UserIdentity/obj/Debug/net9.0/CSharpInDepth.UserIdentity.csproj.AssemblyReference.cache
+/CSharpInDepth/CSharpInDepth.UserIdentity/obj/Debug/net9.0/CSharpInDepth.UserIdentity.assets.cache
+/CSharpInDepth/CSharpInDepth.UserIdentity/obj/CSharpInDepth.UserIdentity.csproj.nuget.dgspec.json
+/CSharpInDepth/CSharpInDepth.UserIdentity/obj/CSharpInDepth.UserIdentity.csproj.nuget.g.props
+/CSharpInDepth/CSharpInDepth.UserIdentity/obj/CSharpInDepth.UserIdentity.csproj.nuget.g.targets
+/CSharpInDepth/CSharpInDepth.UserIdentity/obj/project.assets.json
+/CSharpInDepth/CSharpInDepth.UserIdentity/obj/project.nuget.cache
