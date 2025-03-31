@@ -33,3 +33,6 @@ C:\Users\Abbosjon\Source\Repos\CSharpInDepth\CSharpInDepth\CSharpInDepth.UserIde
 C:\Users\Abbosjon\Source\Repos\CSharpInDepth\CSharpInDepth\CSharpInDepth.UserIdentity\obj\Debug\net9.0\CSharpInDepth.UserIdentity.pdb
 C:\Users\Abbosjon\Source\Repos\CSharpInDepth\CSharpInDepth\CSharpInDepth.UserIdentity\obj\Debug\net9.0\CSharpInDepth.UserIdentity.genruntimeconfig.cache
 C:\Users\Abbosjon\Source\Repos\CSharpInDepth\CSharpInDepth\CSharpInDepth.UserIdentity\obj\Debug\net9.0\ref\CSharpInDepth.UserIdentity.dll
+C:\Users\Abbosjon\source\repos\CSharpInDepth\CSharpInDepth\CSharpInDepth.UserIdentity\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Abbosjon\source\repos\CSharpInDepth\CSharpInDepth\CSharpInDepth.UserIdentity\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Abbosjon\source\repos\CSharpInDepth\CSharpInDepth\CSharpInDepth.UserIdentity\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
