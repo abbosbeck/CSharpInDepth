@@ -2,7 +2,6 @@
 {
     public class TestClass(string name)
     {
-        private string Name = name;
         private int Age;
         public TestClass(int age) : this("Abbos")
         {
