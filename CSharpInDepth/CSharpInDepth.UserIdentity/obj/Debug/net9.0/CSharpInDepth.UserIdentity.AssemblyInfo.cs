@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSharpInDepth.UserIdentity")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4d07a1d514070ba11d6dd5bb545cf410d80ffcc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce7845385da02dc5a8241afc18828cda30b7eebe")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSharpInDepth.UserIdentity")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSharpInDepth.UserIdentity")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

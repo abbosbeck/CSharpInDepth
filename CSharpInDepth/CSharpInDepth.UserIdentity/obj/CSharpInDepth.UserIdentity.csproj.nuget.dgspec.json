@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Abbosjon\\Source\\Repos\\CSharpInDepth\\CSharpInDepth\\CSharpInDepth.UserIdentity\\CSharpInDepth.UserIdentity.csproj": {}
+    "C:\\Users\\Abbosjon\\source\\repos\\CSharpInDepth\\CSharpInDepth\\CSharpInDepth.UserIdentity\\CSharpInDepth.UserIdentity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Abbosjon\\Source\\Repos\\CSharpInDepth\\CSharpInDepth\\CSharpInDepth.UserIdentity\\CSharpInDepth.UserIdentity.csproj": {
+    "C:\\Users\\Abbosjon\\source\\repos\\CSharpInDepth\\CSharpInDepth\\CSharpInDepth.UserIdentity\\CSharpInDepth.UserIdentity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Abbosjon\\Source\\Repos\\CSharpInDepth\\CSharpInDepth\\CSharpInDepth.UserIdentity\\CSharpInDepth.UserIdentity.csproj",
+        "projectUniqueName": "C:\\Users\\Abbosjon\\source\\repos\\CSharpInDepth\\CSharpInDepth\\CSharpInDepth.UserIdentity\\CSharpInDepth.UserIdentity.csproj",
         "projectName": "CSharpInDepth.UserIdentity",
-        "projectPath": "C:\\Users\\Abbosjon\\Source\\Repos\\CSharpInDepth\\CSharpInDepth\\CSharpInDepth.UserIdentity\\CSharpInDepth.UserIdentity.csproj",
+        "projectPath": "C:\\Users\\Abbosjon\\source\\repos\\CSharpInDepth\\CSharpInDepth\\CSharpInDepth.UserIdentity\\CSharpInDepth.UserIdentity.csproj",
         "packagesPath": "C:\\Users\\Abbosjon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Abbosjon\\Source\\Repos\\CSharpInDepth\\CSharpInDepth\\CSharpInDepth.UserIdentity\\obj\\",
+        "outputPath": "C:\\Users\\Abbosjon\\source\\repos\\CSharpInDepth\\CSharpInDepth\\CSharpInDepth.UserIdentity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -54,6 +54,18 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.3, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[8.1.0, )"
             }
           },
           "imports": [
