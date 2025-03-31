@@ -407,3 +407,9 @@ FodyWeavers.xsd
 /CSharpInDepth/CSharpInDepth.UserIdentity/obj/CSharpInDepth.UserIdentity.csproj.nuget.g.targets
 /CSharpInDepth/CSharpInDepth.UserIdentity/obj/project.assets.json
 /CSharpInDepth/CSharpInDepth.UserIdentity/obj/project.nuget.cache
+/CSharpInDepth/CSharpInDepth.UserIdentity/bin/Debug/net9.0/appsettings.Development.json
+/CSharpInDepth/CSharpInDepth.UserIdentity/bin/Debug/net9.0/CSharpInDepth.UserIdentity.deps.json
+/CSharpInDepth/CSharpInDepth.UserIdentity/bin/Debug/net9.0/CSharpInDepth.UserIdentity.dll
+/CSharpInDepth/CSharpInDepth.UserIdentity/bin/Debug/net9.0/CSharpInDepth.UserIdentity.exe
+/CSharpInDepth/CSharpInDepth.UserIdentity/bin/Debug/net9.0/CSharpInDepth.UserIdentity.pdb
+/CSharpInDepth/CSharpInDepth.UserIdentity/bin/Debug/net9.0/CSharpInDepth.UserIdentity.runtimeconfig.json
