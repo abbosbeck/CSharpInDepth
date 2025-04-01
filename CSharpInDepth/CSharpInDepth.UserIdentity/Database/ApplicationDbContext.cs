@@ -1,15 +1,15 @@
-﻿using CSharpInDepth.UserIdentity.Database.Entities;
+﻿using Domain.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 namespace CSharpInDepth.UserIdentity.Database
 {
-    public class ApplicationDbContext(DbContextOptions options) : IdentityDbContext<User>(options)
+    public class ApplicationDbContext(DbContextOptions options) : IdentityDbContext<UserEntity>(options)
     {
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
-            builder.Entity<User>().Property(u => u.Intials).HasMaxLength(5);
+            builder.Entity<UserEntity>().Property(u => u.Intials).HasMaxLength(5);
 
             builder.HasDefaultSchema("identityTablesss");
         }

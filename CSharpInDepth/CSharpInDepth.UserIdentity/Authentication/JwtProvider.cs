@@ -1,5 +1,5 @@
 ﻿using CSharpInDepth.UserIdentity.Application.Abstractions;
-using CSharpInDepth.UserIdentity.Database.Entities;
+using Domain.Entities;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -15,7 +15,7 @@ namespace CSharpInDepth.UserIdentity.Authentication
         {
             _options = options.Value;
         }
-        public string Generate(User user)
+        public string Generate(UserEntity user)
         {
             var claims = new Claim[]
         {

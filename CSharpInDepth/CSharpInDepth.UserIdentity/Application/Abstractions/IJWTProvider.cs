@@ -1,9 +1,9 @@
-﻿using CSharpInDepth.UserIdentity.Database.Entities;
+﻿using Domain.Entities;
 
 namespace CSharpInDepth.UserIdentity.Application.Abstractions
 {
     public interface IJWTProvider
     {
-        string Generate(User user);
+        string Generate(UserEntity user);
     }
 }
