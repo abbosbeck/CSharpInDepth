@@ -9,9 +9,9 @@ namespace CSharpInDepth.UserIdentity.Controllers
     [Route("[controller]")]
     public class MembersController(ISender Sender) : ControllerBase
     {
-        [HttpGet]
+        [HttpPost]
         public async Task<IActionResult> LoginMember(
-            [FromBody] LoginRequest request,
+            [FromBody] LoginCommand request,
             CancellationToken cancellationToken)
         {
             var command = new LoginCommand(request.Email);
