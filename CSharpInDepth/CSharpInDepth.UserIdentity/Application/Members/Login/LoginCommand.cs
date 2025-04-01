@@ -1,6 +1,6 @@
-﻿namespace CSharpInDepth.UserIdentity.Application.Members.Login
+﻿using MediatR;
+
+namespace CSharpInDepth.UserIdentity.Application.Members.Login
 {
-    public class LoginCommand
-    {
-    }
+    public record LoginCommand(string Email) : IRequest<string>;
 }
