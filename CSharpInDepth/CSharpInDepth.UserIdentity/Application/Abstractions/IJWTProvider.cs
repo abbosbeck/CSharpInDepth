@@ -1,4 +1,4 @@
-﻿using CSharpInDepth.UserIdentity.Database;
+﻿using CSharpInDepth.UserIdentity.Database.Entities;
 
 namespace CSharpInDepth.UserIdentity.Application.Abstractions
 {
