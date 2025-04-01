@@ -2,6 +2,7 @@ using CSharpInDepth.UserIdentity.Database;
 using CSharpInDepth.UserIdentity.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,7 +27,15 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
+
 app.ApplyMigrations();
+
+app.MapGet("users/me", async (ClaimsPrincipal claims, ApplicationDbContext context) =>
+{
+    string userId = claims.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
+
+    return await context.Users.FindAsync(userId);
+}).RequireAuthorization();
 
 app.UseHttpsRedirection();
 
