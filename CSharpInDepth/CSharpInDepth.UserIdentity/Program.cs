@@ -1,6 +1,7 @@
 using CSharpInDepth.UserIdentity.Application.Abstractions;
 using CSharpInDepth.UserIdentity.Authentication;
 using CSharpInDepth.UserIdentity.Database;
+using CSharpInDepth.UserIdentity.Database.Entities;
 using CSharpInDepth.UserIdentity.Extensions;
 using CSharpInDepth.UserIdentity.OptionsSetup;
 using Microsoft.AspNetCore.Authentication.JwtBearer;

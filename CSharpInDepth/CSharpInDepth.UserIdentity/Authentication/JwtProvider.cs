@@ -1,5 +1,5 @@
 ﻿using CSharpInDepth.UserIdentity.Application.Abstractions;
-using CSharpInDepth.UserIdentity.Database;
+using CSharpInDepth.UserIdentity.Database.Entities;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
