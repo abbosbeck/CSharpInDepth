@@ -1,3 +1,5 @@
+using CSharpInDepth.UserIdentity.Application.Abstractions;
+using CSharpInDepth.UserIdentity.Authentication;
 using CSharpInDepth.UserIdentity.Database;
 using CSharpInDepth.UserIdentity.Extensions;
 using Microsoft.AspNetCore.Identity;
@@ -11,10 +13,13 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<IJWTProvider, JwtProvider>();
+
 builder.Services.AddMediatR(configuration =>
 {
     configuration.RegisterServicesFromAssembly(typeof(Program).Assembly);
 });
+
 
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication()

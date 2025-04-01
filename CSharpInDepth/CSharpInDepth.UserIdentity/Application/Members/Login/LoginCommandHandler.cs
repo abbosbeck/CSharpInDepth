@@ -5,11 +5,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CSharpInDepth.UserIdentity.Application.Members.Login
 {
-    public sealed class LoginCommandHandler(ApplicationDbContext applicationDbContext, IJWTProvider jWTProvider) : IRequestHandler<LoginCommand, string>
+    public sealed class LoginCommandHandler(IJWTProvider jWTProvider) : IRequestHandler<LoginCommand, string>
     {
+        private readonly ApplicationDbContext _applicationDb;
+
         public async Task<string> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
-            var user = await applicationDbContext.Users.FirstOrDefaultAsync(x => x.Email == request.Email);
+            var user = await _applicationDb.Users.FirstOrDefaultAsync(x => x.Email == request.Email);
 
             if (user is null)
                 throw new Exception("Not found");
