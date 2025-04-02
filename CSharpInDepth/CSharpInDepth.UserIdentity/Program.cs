@@ -17,15 +17,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IJWTProvider, JwtProvider>();
-
 builder.Services.AddInfrastructureDependencies(builder.Configuration);
-
-builder.Services.AddMediatR(configuration =>
-{
-    configuration.RegisterServicesFromAssembly(typeof(Application.AssemblyReference).Assembly);
-});
-
 
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
