@@ -1,4 +1,4 @@
-﻿using CSharpInDepth.UserIdentity.Database;
+﻿using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 namespace CSharpInDepth.UserIdentity.Extensions
