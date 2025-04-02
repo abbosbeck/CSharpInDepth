@@ -1,4 +1,4 @@
-﻿using CSharpInDepth.UserIdentity.Authentication;
+﻿using Application.Authentication;
 using Microsoft.Extensions.Options;
 
 namespace CSharpInDepth.UserIdentity.OptionsSetup
