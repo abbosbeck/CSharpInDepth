@@ -23,7 +23,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddMediatR(configuration =>
 {
-    configuration.RegisterServicesFromAssembly(typeof(Program).Assembly);
+    configuration.RegisterServicesFromAssembly(typeof(Application.AssemblyReference).Assembly);
 });
 
 
