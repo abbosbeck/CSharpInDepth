@@ -1,9 +1,9 @@
-using CSharpInDepth.UserIdentity.Application.Abstractions;
-using CSharpInDepth.UserIdentity.Authentication;
-using CSharpInDepth.UserIdentity.Database;
-using CSharpInDepth.UserIdentity.Database.Entities;
+using Application.Abstractions;
+using Application.Authentication;
 using CSharpInDepth.UserIdentity.Extensions;
 using CSharpInDepth.UserIdentity.OptionsSetup;
+using Domain.Entities;
+using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -23,7 +23,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddMediatR(configuration =>
 {
-    configuration.RegisterServicesFromAssembly(typeof(Program).Assembly);
+    configuration.RegisterServicesFromAssembly(typeof(Application.AssemblyReference).Assembly);
 });
 
 
@@ -38,7 +38,7 @@ builder.Services.ConfigureOptions<JwtBearerOptionsSetup>();
     .AddCookie(IdentityConstants.ApplicationScheme);
 */
 
-builder.Services.AddIdentityCore<User>()
+builder.Services.AddIdentityCore<UserEntity>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddApiEndpoints();
 
@@ -60,7 +60,7 @@ app.MapGet("users/me", async (ClaimsPrincipal claims, ApplicationDbContext conte
 
 app.UseHttpsRedirection();
 
-app.MapIdentityApi<User>();
+app.MapIdentityApi<UserEntity>();
 
 app.UseAuthorization();
 app.UseAuthentication();

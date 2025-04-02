@@ -1,4 +1,4 @@
-﻿namespace CSharpInDepth.UserIdentity.Authentication
+﻿namespace Application.Authentication
 {
     public class JwtOptions
     {

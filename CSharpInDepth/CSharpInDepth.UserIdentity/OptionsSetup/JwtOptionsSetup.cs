@@ -1,4 +1,4 @@
-﻿using CSharpInDepth.UserIdentity.Authentication;
+﻿using Application.Authentication;
 using Microsoft.Extensions.Options;
 
 namespace CSharpInDepth.UserIdentity.OptionsSetup
@@ -10,7 +10,7 @@ namespace CSharpInDepth.UserIdentity.OptionsSetup
 
         public JwtOptionsSetup(IConfiguration configuration)
         {
-            _configuration=configuration;
+            _configuration = configuration;
         }
 
         public void Configure(JwtOptions options)

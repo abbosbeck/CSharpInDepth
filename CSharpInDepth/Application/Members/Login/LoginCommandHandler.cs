@@ -1,9 +1,9 @@
-﻿using CSharpInDepth.UserIdentity.Application.Abstractions;
-using CSharpInDepth.UserIdentity.Database;
+﻿using Application.Abstractions;
+using Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace CSharpInDepth.UserIdentity.Application.Members.Login
+namespace Application.Members.Login
 {
     public sealed class LoginCommandHandler : IRequestHandler<LoginCommand, string>
     {
@@ -22,9 +22,9 @@ namespace CSharpInDepth.UserIdentity.Application.Members.Login
             if (user is null)
                 throw new Exception("Not found");
 
-            var token = _jWTProvider.Generate(user);
+            //var token = _jWTProvider.Generate(user);
 
-            return token;
+            return "token";
         }
     }
 }

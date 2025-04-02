@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Domain.Common;
+using Microsoft.AspNetCore.Identity;
 
-namespace CSharpInDepth.UserIdentity.Database.Entities
+namespace Domain.Entities
 {
-    public class User : IdentityUser, ISoftDeletable
+    public class UserEntity : IdentityUser, ISoftDeletable
     {
         public string? Intials { get; set; }
         public bool IsDeleted { get; set; }

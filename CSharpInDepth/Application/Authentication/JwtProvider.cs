@@ -1,12 +1,12 @@
-﻿using CSharpInDepth.UserIdentity.Application.Abstractions;
-using CSharpInDepth.UserIdentity.Database.Entities;
+﻿using Application.Abstractions;
+using Domain.Entities;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace CSharpInDepth.UserIdentity.Authentication
+namespace Application.Authentication
 {
     public class JwtProvider : IJWTProvider
     {
@@ -15,7 +15,7 @@ namespace CSharpInDepth.UserIdentity.Authentication
         {
             _options = options.Value;
         }
-        public string Generate(User user)
+        public string Generate(UserEntity user)
         {
             var claims = new Claim[]
         {

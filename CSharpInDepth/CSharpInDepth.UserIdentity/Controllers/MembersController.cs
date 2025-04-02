@@ -1,6 +1,5 @@
-﻿using CSharpInDepth.UserIdentity.Application.Members.Login;
+﻿using Application.Members.Login;
 using MediatR;
-using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CSharpInDepth.UserIdentity.Controllers

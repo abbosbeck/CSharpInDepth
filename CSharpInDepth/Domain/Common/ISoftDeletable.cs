@@ -1,4 +1,4 @@
-﻿namespace CSharpInDepth.UserIdentity.Database.Entities
+﻿namespace Domain.Common
 {
     public interface ISoftDeletable
     {
