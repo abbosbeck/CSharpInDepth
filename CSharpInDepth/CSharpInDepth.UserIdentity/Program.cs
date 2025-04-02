@@ -1,12 +1,10 @@
-using Application.Abstractions;
-using Application.Authentication;
 using CSharpInDepth.UserIdentity.Extensions;
 using CSharpInDepth.UserIdentity.OptionsSetup;
 using Domain.Entities;
+using Infrastructure;
 using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,16 +14,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IJWTProvider, JwtProvider>();
-
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-builder.Services.AddMediatR(configuration =>
-{
-    configuration.RegisterServicesFromAssembly(typeof(Application.AssemblyReference).Assembly);
-});
-
+builder.Services.AddInfrastructureDependencies(builder.Configuration);
 
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
