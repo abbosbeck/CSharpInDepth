@@ -1,6 +1,5 @@
 ﻿using Domain.Common;
 using Microsoft.AspNetCore.Identity;
-// try to resolve the missing reference by adding the following using statement: using Microsoft.AspNetCore.Identity;
 
 namespace Domain.Entities
 {
