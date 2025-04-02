@@ -10,7 +10,7 @@ namespace CSharpInDepth.UserIdentity.OptionsSetup
 
         public JwtOptionsSetup(IConfiguration configuration)
         {
-            _configuration=configuration;
+            _configuration = configuration;
         }
 
         public void Configure(JwtOptions options)
