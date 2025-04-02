@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace CSharpInDepth.UserIdentity.Application.Members.Login
+namespace Application.Members.Login
 {
     public record LoginCommand(string Email) : IRequest<string>;
 }

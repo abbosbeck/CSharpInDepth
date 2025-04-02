@@ -1,9 +1,10 @@
-﻿using CSharpInDepth.UserIdentity.Application.Abstractions;
+﻿using Application.Abstractions;
+using CSharpInDepth.UserIdentity.Application.Abstractions;
 using CSharpInDepth.UserIdentity.Database;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace CSharpInDepth.UserIdentity.Application.Members.Login
+namespace Application.Members.Login
 {
     public sealed class LoginCommandHandler : IRequestHandler<LoginCommand, string>
     {

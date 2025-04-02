@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
 
-namespace CSharpInDepth.UserIdentity.Application.Abstractions
+namespace Application.Abstractions
 {
     public interface IJWTProvider
     {
