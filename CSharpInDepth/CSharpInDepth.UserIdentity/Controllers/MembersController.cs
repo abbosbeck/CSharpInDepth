@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CSharpInDepth.UserIdentity.Controllers
 {
-    public class MembersController(ISender Sender) : ApiController(Sender)
+    public class MembersController(ISender Sender) : ApiControllerBase(Sender)
     {
         [HttpPost]
         public async Task<IActionResult> LoginMember(
