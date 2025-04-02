@@ -22,9 +22,9 @@ namespace Application.Members.Login
             if (user is null)
                 throw new Exception("Not found");
 
-            var token = _jWTProvider.Generate(user);
+            //var token = _jWTProvider.Generate(user);
 
-            return token;
+            return "token";
         }
     }
 }
