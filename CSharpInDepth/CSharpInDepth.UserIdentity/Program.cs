@@ -3,6 +3,7 @@ using Application.Authentication;
 using CSharpInDepth.UserIdentity.Extensions;
 using CSharpInDepth.UserIdentity.OptionsSetup;
 using Domain.Entities;
+using Infrastructure;
 using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -18,8 +19,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IJWTProvider, JwtProvider>();
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddInfrastructureDependencies(builder.Configuration);
 
 builder.Services.AddMediatR(configuration =>
 {
