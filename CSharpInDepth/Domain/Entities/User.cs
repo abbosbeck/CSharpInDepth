@@ -16,14 +16,6 @@ namespace Domain.Entities
         public DateTime? LastModifiedOn { get; set; }
         public string LastModifiedBy { get; set; }
 
-        public static string HashPassword(string password)
-        {
-            var passwordHasher = new Microsoft.AspNet.Identity.PasswordHasher();
-            var hashedPassword = passwordHasher.HashPassword(password);
-
-            return hashedPassword;
-        }
-
         public static bool ValidatePassword(string password)
         {
             var hasNumber = new Regex(@"[0-9]+");
