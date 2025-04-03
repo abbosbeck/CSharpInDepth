@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,15 +9,17 @@ namespace Infrastructure.Persistence
     {
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);
 
             builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
 
-            builder.Entity<User>().Property(u => u.Intials).HasMaxLength(5);
+            builder.Ignore<IdentityUserClaim<Guid>>();
+            builder.Ignore<IdentityRoleClaim<Guid>>();
+            builder.Ignore<IdentityUserToken<Guid>>();
+            builder.Ignore<IdentityUserLogin<Guid>>();
 
             builder.HasDefaultSchema("identityTables");
 
-
+            base.OnModelCreating(builder);
         }
     }
 }
