@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -11,11 +12,11 @@ namespace Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.EnsureSchema(
-                name: "identityTablesss");
+                name: "identityTables");
 
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
-                schema: "identityTablesss",
+                schema: "identityTables",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -30,27 +31,17 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.CreateTable(
                 name: "AspNetUsers",
-                schema: "identityTablesss",
+                schema: "identityTables",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Intials = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
-                    LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -59,7 +50,7 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
-                schema: "identityTablesss",
+                schema: "identityTables",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -74,7 +65,7 @@ namespace Infrastructure.Migrations
                     table.ForeignKey(
                         name: "FK_AspNetRoleClaims_AspNetRoles_RoleId",
                         column: x => x.RoleId,
-                        principalSchema: "identityTablesss",
+                        principalSchema: "identityTables",
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -82,7 +73,7 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.CreateTable(
                 name: "AspNetUserClaims",
-                schema: "identityTablesss",
+                schema: "identityTables",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -97,7 +88,7 @@ namespace Infrastructure.Migrations
                     table.ForeignKey(
                         name: "FK_AspNetUserClaims_AspNetUsers_UserId",
                         column: x => x.UserId,
-                        principalSchema: "identityTablesss",
+                        principalSchema: "identityTables",
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -105,7 +96,7 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.CreateTable(
                 name: "AspNetUserLogins",
-                schema: "identityTablesss",
+                schema: "identityTables",
                 columns: table => new
                 {
                     LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -119,7 +110,7 @@ namespace Infrastructure.Migrations
                     table.ForeignKey(
                         name: "FK_AspNetUserLogins_AspNetUsers_UserId",
                         column: x => x.UserId,
-                        principalSchema: "identityTablesss",
+                        principalSchema: "identityTables",
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -127,7 +118,7 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.CreateTable(
                 name: "AspNetUserRoles",
-                schema: "identityTablesss",
+                schema: "identityTables",
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -139,14 +130,14 @@ namespace Infrastructure.Migrations
                     table.ForeignKey(
                         name: "FK_AspNetUserRoles_AspNetRoles_RoleId",
                         column: x => x.RoleId,
-                        principalSchema: "identityTablesss",
+                        principalSchema: "identityTables",
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_AspNetUserRoles_AspNetUsers_UserId",
                         column: x => x.UserId,
-                        principalSchema: "identityTablesss",
+                        principalSchema: "identityTables",
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -154,7 +145,7 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.CreateTable(
                 name: "AspNetUserTokens",
-                schema: "identityTablesss",
+                schema: "identityTables",
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -168,7 +159,7 @@ namespace Infrastructure.Migrations
                     table.ForeignKey(
                         name: "FK_AspNetUserTokens_AspNetUsers_UserId",
                         column: x => x.UserId,
-                        principalSchema: "identityTablesss",
+                        principalSchema: "identityTables",
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -176,13 +167,13 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
-                schema: "identityTablesss",
+                schema: "identityTables",
                 table: "AspNetRoleClaims",
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
                 name: "RoleNameIndex",
-                schema: "identityTablesss",
+                schema: "identityTables",
                 table: "AspNetRoles",
                 column: "NormalizedName",
                 unique: true,
@@ -190,35 +181,21 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUserClaims_UserId",
-                schema: "identityTablesss",
+                schema: "identityTables",
                 table: "AspNetUserClaims",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUserLogins_UserId",
-                schema: "identityTablesss",
+                schema: "identityTables",
                 table: "AspNetUserLogins",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUserRoles_RoleId",
-                schema: "identityTablesss",
+                schema: "identityTables",
                 table: "AspNetUserRoles",
                 column: "RoleId");
-
-            migrationBuilder.CreateIndex(
-                name: "EmailIndex",
-                schema: "identityTablesss",
-                table: "AspNetUsers",
-                column: "NormalizedEmail");
-
-            migrationBuilder.CreateIndex(
-                name: "UserNameIndex",
-                schema: "identityTablesss",
-                table: "AspNetUsers",
-                column: "NormalizedUserName",
-                unique: true,
-                filter: "[NormalizedUserName] IS NOT NULL");
         }
 
         /// <inheritdoc />
@@ -226,31 +203,31 @@ namespace Infrastructure.Migrations
         {
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims",
-                schema: "identityTablesss");
+                schema: "identityTables");
 
             migrationBuilder.DropTable(
                 name: "AspNetUserClaims",
-                schema: "identityTablesss");
+                schema: "identityTables");
 
             migrationBuilder.DropTable(
                 name: "AspNetUserLogins",
-                schema: "identityTablesss");
+                schema: "identityTables");
 
             migrationBuilder.DropTable(
                 name: "AspNetUserRoles",
-                schema: "identityTablesss");
+                schema: "identityTables");
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens",
-                schema: "identityTablesss");
+                schema: "identityTables");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles",
-                schema: "identityTablesss");
+                schema: "identityTables");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers",
-                schema: "identityTablesss");
+                schema: "identityTables");
         }
     }
 }
