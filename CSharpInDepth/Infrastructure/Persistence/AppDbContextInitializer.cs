@@ -16,33 +16,33 @@ namespace Infrastructure.Persistence
             await initializer.SeedAsync();
         }
     }
-    public class  AppDbContextInitializer(ApplicationDbContext dbContext)
+    public class AppDbContextInitializer(ApplicationDbContext dbContext)
     {
         public async Task InitialiseAsync()
         {
-			try
-			{
-				await dbContext.Database.MigrateAsync();
+            try
+            {
+                await dbContext.Database.MigrateAsync();
             }
-			catch (Exception ex)
-			{
+            catch (Exception ex)
+            {
                 Console.WriteLine($"Error during database migration: {ex}");
                 throw;
-			}
+            }
         }
 
         public async Task SeedAsync()
         {
-			try
-			{
-				if(!await dbContext.Set<User>().AnyAsync())
-				{
-					dbContext.Set<User>().Add(new User
-					{
-						FirstName = "Admin",
+            try
+            {
+                if (!await dbContext.Set<User>().AnyAsync())
+                {
+                    dbContext.Set<User>().Add(new User
+                    {
+                        FirstName = "Admin",
                         LastName = "Admin",
                         Department = "Admin",
-						PhoneNumber = "1234567890",
+                        PhoneNumber = "1234567890",
                         IsDeleted = false,
                         CreatedOn = DateTime.UtcNow,
                         CreatedBy = "System",
@@ -84,11 +84,11 @@ namespace Infrastructure.Persistence
                 }
 
             }
-			catch (Exception ex)
-			{
+            catch (Exception ex)
+            {
                 Console.WriteLine("Error during seeding: " + ex);
                 throw;
-			}
+            }
         }
     }
 }
