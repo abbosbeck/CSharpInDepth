@@ -1,5 +1,6 @@
 ﻿using Application.Users.GetUserByPhoneNumber;
 using Application.Users.LoginUser;
+using Application.Users.RefreshToken;
 using Application.Users.Register;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +32,16 @@ namespace CSharpInDepth.UserIdentity.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(
             [FromBody] LoginUserCommand request,
+            CancellationToken cancellationToken)
+        {
+            var tokenResult = await Sender.Send(request, cancellationToken);
+
+            return Ok(tokenResult);
+        }
+
+        [HttpPost("refresh-token")]
+        public async Task<IActionResult> LoginWithRefreshToken(
+            [FromBody] RefreshTokenCommand request,
             CancellationToken cancellationToken)
         {
             var tokenResult = await Sender.Send(request, cancellationToken);
