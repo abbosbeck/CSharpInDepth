@@ -1,7 +1,6 @@
 ﻿using Application.Abstractions;
 using Application.Common.Interfaces;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace Application.Members.Login
 {
