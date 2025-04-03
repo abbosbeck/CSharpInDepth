@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Application.Authentication;
+using Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,7 +18,7 @@ namespace Infrastructure.Persistence
             await initializer.SeedAsync();
         }
     }
-    public class AppDbContextInitializer(ApplicationDbContext dbContext)
+    public class AppDbContextInitializer(ApplicationDbContext dbContext, PasswordHasher passwordHasher)
     {
         public async Task InitialiseAsync()
         {
@@ -49,7 +50,7 @@ namespace Infrastructure.Persistence
                         CreatedBy = "System",
                         LastModifiedOn = DateTime.UtcNow,
                         LastModifiedBy = "System",
-                        PasswordHash = User.HashPassword("Admin1234!"),
+                        PasswordHash = passwordHasher.Hash("Admin1234!"),
                     });
 
                     dbContext.Set<User>().Add(new User
@@ -63,7 +64,7 @@ namespace Infrastructure.Persistence
                         CreatedBy = "System",
                         LastModifiedOn = DateTime.UtcNow,
                         LastModifiedBy = "System",
-                        PasswordHash = User.HashPassword("John1234!"),
+                        PasswordHash = passwordHasher.Hash("John1234!"),
                     });
 
                     await dbContext.SaveChangesAsync();

@@ -426,3 +426,4 @@ FodyWeavers.xsd
 /CSharpInDepth/CSharpInDepth.UserIdentity/obj/Debug/net9.0/ApiEndpoints.json
 /CSharpInDepth/.idea/.idea.CSharpInDepth/.idea/.gitignore
 /CSharpInDepth/.idea/.idea.CSharpInDepth/.idea
+/CSharpInDepth/CSharpInDepth.UserIdentity/bin/Debug/net9.0/appsettings.json
