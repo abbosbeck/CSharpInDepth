@@ -1,7 +1,7 @@
 ﻿using Domain.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Identity;
 
 namespace Infrastructure.Persistence
 {
@@ -68,7 +68,7 @@ namespace Infrastructure.Persistence
 
                     await dbContext.SaveChangesAsync();
                 }
-                
+
                 if (!await dbContext.Set<Role>().AnyAsync())
                 {
                     dbContext.Set<Role>().Add(new Role
@@ -97,11 +97,11 @@ namespace Infrastructure.Persistence
                     await dbContext.SaveChangesAsync();
                 }
 
-                if(!await dbContext.Set<IdentityUserRole<Guid>>().AnyAsync())
+                if (!await dbContext.Set<IdentityUserRole<Guid>>().AnyAsync())
                 {
                     var adminRole = await dbContext.Set<Role>().FirstOrDefaultAsync(r => r.Name == "Admin");
                     var adminUser = await dbContext.Set<User>().FirstOrDefaultAsync(u => u.FirstName == "Admin");
-                    
+
                     if (adminRole != null && adminUser != null)
                     {
                         dbContext.Set<IdentityUserRole<Guid>>().Add(new IdentityUserRole<Guid>
@@ -137,7 +137,7 @@ namespace Infrastructure.Persistence
         {
             var passwordHasher = new Microsoft.AspNet.Identity.PasswordHasher();
             var hashedPassword = passwordHasher.HashPassword(password);
-            
+
             return hashedPassword;
         }
     }
