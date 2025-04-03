@@ -1,5 +1,5 @@
 ﻿using Application.Abstractions;
-using Infrastructure.Persistence;
+using Application.Common.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,17 +7,17 @@ namespace Application.Members.Login
 {
     public sealed class LoginCommandHandler : IRequestHandler<LoginCommand, string>
     {
-        private readonly ApplicationDbContext _applicationDb;
+        private readonly IUserRepository _userRepository;
         private readonly IJWTProvider _jWTProvider;
-        public LoginCommandHandler(ApplicationDbContext applicationDbContext, IJWTProvider jWTProvider)
+        public LoginCommandHandler(IUserRepository userRepository, IJWTProvider jWTProvider)
         {
-            _applicationDb = applicationDbContext;
+            _userRepository = userRepository;
             _jWTProvider = jWTProvider;
         }
 
         public async Task<string> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
-            var user = await _applicationDb.Users.FirstOrDefaultAsync(x => x.Email == request.Email);
+            var user = await _userRepository.GetUserByEmailAsync(request.Email);
 
             if (user is null)
                 throw new Exception("Not found");
