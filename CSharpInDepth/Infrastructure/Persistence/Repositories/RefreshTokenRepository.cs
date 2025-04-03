@@ -12,6 +12,15 @@ namespace Infrastructure.Persistence.Repositories
             await applicationDbContext.SaveChangesAsync();
         }
 
+        public async Task DeleteRefreshToken(Guid userId)
+        {
+            await applicationDbContext.RefreshTokens
+                .Where(r => r.UserId == userId)
+                .ExecuteDeleteAsync();
+
+            await applicationDbContext.SaveChangesAsync();
+        }
+
         public async Task<RefreshToken> GetRefreshTokenAsync(string refreshToken)
         {
             var refreshTokenFromDb = await applicationDbContext.RefreshTokens

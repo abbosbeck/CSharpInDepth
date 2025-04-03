@@ -7,5 +7,6 @@ namespace Application.Common.Interfaces
         Task AddRefreshTokenAsync(RefreshToken refreshToken);
         Task<RefreshToken> GetRefreshTokenAsync(string refreshToken);
         void UpdateRefreshToken(RefreshToken refreshToken);
+        Task DeleteRefreshToken(Guid userId);
     }
 }

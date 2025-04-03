@@ -11,8 +11,10 @@ namespace Application
             this IServiceCollection services,
             IConfiguration configuration)
         {
+            services.AddHttpContextAccessor();
             services.AddSingleton<TokenProvider>();
             services.AddScoped<PasswordHasher>();
+            
             services.AddMediatR(configuration =>
             {
                 configuration.RegisterServicesFromAssembly(typeof(Application.AssemblyReference).Assembly);
