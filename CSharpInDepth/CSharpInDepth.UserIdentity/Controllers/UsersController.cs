@@ -1,4 +1,4 @@
-﻿using Application.Members.Login;
+﻿using Application.Members.GetUserByPhoneNumber;
 using Application.Members.Register;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -7,9 +7,9 @@ namespace CSharpInDepth.UserIdentity.Controllers
 {
     public class UsersController(ISender Sender) : ApiControllerBase(Sender)
     {
-        [HttpPost]
-        public async Task<IActionResult> Login(
-            [FromBody] LoginCommand request,
+        [HttpPost("GetUserByPhoneNumber")]
+        public async Task<IActionResult> GetUserByPhoneNumber(
+            [FromBody] GetUserByPhoneNumberCommand request,
             CancellationToken cancellationToken)
         {
             var tokenResult = await Sender.Send(request, cancellationToken);
@@ -23,7 +23,7 @@ namespace CSharpInDepth.UserIdentity.Controllers
             CancellationToken cancellationToken)
         {
             var tokenResult = await Sender.Send(request, cancellationToken);
-            
+
             return Ok(tokenResult);
         }
     }
