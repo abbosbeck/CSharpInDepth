@@ -4,11 +4,11 @@ using MediatR;
 namespace Application.Users.GetUserByPhoneNumber
 {
     public sealed class GetUserByPhoneNumberCommandHandler(
-        IUserRepository userRepository) 
+        IUserRepository userRepository)
         : IRequestHandler<GetUserByPhoneNumberCommand, UserResponse>
     {
         public async Task<UserResponse> Handle(
-            GetUserByPhoneNumberCommand request, 
+            GetUserByPhoneNumberCommand request,
             CancellationToken cancellationToken)
         {
             var user = await userRepository.GetUserByPhoneNumberAsync(

@@ -1,14 +1,18 @@
 ﻿using Application.Authentication;
 using Application.Common.Interfaces;
-using Domain;
-using Domain.Entities;
 using MediatR;
 
 namespace Application.Users.LoginUser
 {
-    class LoginUserCommandHandler(TokenProvider tokenProvider, IUserRepository userRepository, PasswordHasher passwordHasher) : IRequestHandler<LoginUserCommand, string>
+    public sealed record LoginUserResponse(string AccessToken, string RefreshToken);
+    class LoginUserCommandHandler(
+        TokenProvider tokenProvider,
+        IUserRepository userRepository,
+        IRefreshTokenRepository refreshTokenRepository,
+        PasswordHasher passwordHasher)
+        : IRequestHandler<LoginUserCommand, LoginUserResponse>
     {
-        public async Task<string> Handle(LoginUserCommand request, CancellationToken cancellationToken)
+        public async Task<LoginUserResponse> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
             var user = await userRepository.GetUserByPhoneNumberAsync(request.phoneNumber);
 
@@ -23,10 +27,19 @@ namespace Application.Users.LoginUser
                 throw new Exception("Password is not valid");
             }
 
-
             var token = tokenProvider.Create(user);
 
-            return token;
+            var refreshToken = new Domain.Entities.RefreshToken
+            {
+                Id = Guid.NewGuid(),
+                Token = tokenProvider.GenerateRefreshToken(),
+                UserId = user.Id,
+                ExpiresOnUtc = DateTime.UtcNow.AddDays(7)
+            };
+
+            await refreshTokenRepository.AddRefreshTokenAsync(refreshToken);
+
+            return new LoginUserResponse(token, refreshToken.Token);
         }
     }
 }

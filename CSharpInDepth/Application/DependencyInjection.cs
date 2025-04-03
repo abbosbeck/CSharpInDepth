@@ -1,5 +1,4 @@
-﻿using Application.Abstractions;
-using Application.Authentication;
+﻿using Application.Authentication;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,8 +10,10 @@ namespace Application
             this IServiceCollection services,
             IConfiguration configuration)
         {
+            services.AddHttpContextAccessor();
             services.AddSingleton<TokenProvider>();
             services.AddScoped<PasswordHasher>();
+
             services.AddMediatR(configuration =>
             {
                 configuration.RegisterServicesFromAssembly(typeof(Application.AssemblyReference).Assembly);

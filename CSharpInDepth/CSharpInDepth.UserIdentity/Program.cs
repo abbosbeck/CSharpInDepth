@@ -1,64 +1,58 @@
 using Application;
 using CSharpInDepth.UserIdentity.Extensions;
-using Domain.Entities;
 using Infrastructure;
 using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
+using System.Text;
 
-internal class Program
-{
-    private static async Task Main(string[] args)
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers();
+
+builder.Services.AddOpenApi();
+builder.Services.AddSwaggerGetWithAuth();
+
+builder.Services.AddInfrastructureDependencies(builder.Configuration);
+builder.Services.AddApplicationDependencies(builder.Configuration);
+
+builder.Services.AddAuthorization();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(o =>
     {
-        var builder = WebApplication.CreateBuilder(args);
-
-        builder.Services.AddControllers();
-
-        builder.Services.AddOpenApi();
-        builder.Services.AddSwaggerGen();
-
-        builder.Services.AddInfrastructureDependencies(builder.Configuration);
-        builder.Services.AddApplicationDependencies(builder.Configuration);
-
-        builder.Services.AddAuthorization();
-        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer();
-
-        /*builder.Services.AddAuthentication()
-            .AddCookie(IdentityConstants.ApplicationScheme);
-        */
-
-        builder.Services.AddIdentityCore<User>()
-            .AddEntityFrameworkStores<ApplicationDbContext>()
-            .AddApiEndpoints();
-
-
-        var app = builder.Build();
-
-        app.UseSwagger();
-        app.UseSwaggerUI();
-
-        await app.Services.InitialiseDatabaseAsync();
-
-        app.ApplyMigrations();
-
-        app.MapGet("users/me", async (ClaimsPrincipal claims, ApplicationDbContext context) =>
+        o.RequireHttpsMetadata = false;
+        o.TokenValidationParameters = new TokenValidationParameters
         {
-            string userId = claims.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"]!)),
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            ClockSkew = TimeSpan.Zero
+        };
+    });
 
-            return await context.Users.FindAsync(userId);
-        }).RequireAuthorization();
+var app = builder.Build();
 
-        app.UseHttpsRedirection();
+app.UseSwagger();
+app.UseSwaggerUI();
 
-        app.MapIdentityApi<User>();
+await app.Services.InitialiseDatabaseAsync();
 
-        app.UseAuthorization();
-        app.UseAuthentication();
+app.ApplyMigrations();
 
-        app.MapControllers();
+app.MapGet("users/me", async (ClaimsPrincipal claims, ApplicationDbContext context) =>
+{
+    string userId = claims.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
 
-        app.Run();
-    }
-}
+    return await context.Users.FindAsync(userId.ToString());
+}).RequireAuthorization();
+
+app.UseHttpsRedirection();
+
+app.UseAuthentication();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
