@@ -1,5 +1,6 @@
 ﻿using Domain.Common;
 using Microsoft.AspNetCore.Identity;
+using System.Text.RegularExpressions;
 
 namespace Domain.Entities
 {
@@ -21,6 +22,19 @@ namespace Domain.Entities
             var hashedPassword = passwordHasher.HashPassword(password);
 
             return hashedPassword;
+        }
+
+        public static bool ValidatePassword(string password)
+        {
+            var hasNumber = new Regex(@"[0-9]+");
+            var hasUpperChar = new Regex(@"[A-Z]+");
+            var hasMinimum8Chars = new Regex(@".{8,}");
+
+            var isValidated = hasNumber.IsMatch(password) 
+                && hasUpperChar.IsMatch(password) 
+                && hasMinimum8Chars.IsMatch(password);
+            
+            return isValidated;
         }
     }
 }
