@@ -12,7 +12,9 @@ namespace Infrastructure.Persistence
 
             builder.Entity<UserEntity>().Property(u => u.Intials).HasMaxLength(5);
 
-            builder.HasDefaultSchema("identityTablesss");
+            builder.HasDefaultSchema("identityTables");
+
+
         }
     }
 }
