@@ -6,7 +6,7 @@ namespace Infrastructure.Persistence.Repositories
 {
     class UserRepository(ApplicationDbContext context) : IUserRepository
     {
-        public Task<User> GetUserByEmailAsync(string email)
+        public Task<User> GetAsync(string email)
         {
             var user = context.Users
                 .AsNoTracking()
