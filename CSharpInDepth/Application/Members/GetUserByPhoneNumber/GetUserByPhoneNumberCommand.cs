@@ -1,7 +1,6 @@
-﻿using Domain.Entities;
-using MediatR;
+﻿using MediatR;
 
 namespace Application.Members.GetUserByPhoneNumber
 {
-    public sealed record GetUserByPhoneNumberCommand(string phoneNumber) : IRequest<User>;
+    public sealed record GetUserByPhoneNumberCommand(string phoneNumber) : IRequest<UserResponse>;
 }

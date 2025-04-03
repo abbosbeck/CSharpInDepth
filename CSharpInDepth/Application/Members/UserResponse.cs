@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
 
-namespace Application.Members.Register
+namespace Application.Members
 {
     public sealed record UserResponse(
         Guid Id, 

@@ -5,13 +5,13 @@ using MediatR;
 
 namespace Application.Members.GetUserByPhoneNumber
 {
-    public sealed class GetUserByPhoneNumberCommandHandler(IUserRepository userRepository) : IRequestHandler<GetUserByPhoneNumberCommand, User>
+    public sealed class GetUserByPhoneNumberCommandHandler(IUserRepository userRepository) : IRequestHandler<GetUserByPhoneNumberCommand, UserResponse>
     {
-        public async Task<User> Handle(GetUserByPhoneNumberCommand request, CancellationToken cancellationToken)
+        public async Task<UserResponse> Handle(GetUserByPhoneNumberCommand request, CancellationToken cancellationToken)
         {
             var user = await userRepository.GetUserByPhoneNumberAsync(request.phoneNumber);
 
-            return user;
+            return UserResponse.FromUser(user);
         }
     }
 }
