@@ -5,10 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistence
 {
-    public class ApplicationDbContext(DbContextOptions options) : IdentityDbContext<User>(options)
+    public class ApplicationDbContext(DbContextOptions options) : IdentityDbContext<User, Role, Guid>(options)
     {
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            base.OnModelCreating(builder);
 
             builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
 
@@ -17,9 +18,11 @@ namespace Infrastructure.Persistence
             builder.Ignore<IdentityUserToken<Guid>>();
             builder.Ignore<IdentityUserLogin<Guid>>();
 
-            builder.HasDefaultSchema("identityTables");
+            //builder.HasDefaultSchema("identityTables");
 
-            base.OnModelCreating(builder);
+            builder.Entity<User>().ToTable("users");
+            builder.Entity<Role>().ToTable("roles");
+            builder.Entity<IdentityUserRole<Guid>>().ToTable("user_roles");
         }
     }
 }
