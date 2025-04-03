@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Domain.Entities
 {
-    public class UserEntity : IdentityUser, ISoftDeletable
+    public class User : IdentityUser, ISoftDeletable
     {
         public string? Intials { get; set; }
         public bool IsDeleted { get; set; }
