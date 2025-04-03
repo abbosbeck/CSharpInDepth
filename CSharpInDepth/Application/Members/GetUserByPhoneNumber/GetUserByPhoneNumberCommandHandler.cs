@@ -9,7 +9,7 @@ namespace Application.Members.GetUserByPhoneNumber
     {
         public async Task<User> Handle(GetUserByPhoneNumberCommand request, CancellationToken cancellationToken)
         {
-            var user = await userRepository.GetUserByFirstNameAsync(request.phoneNumber);
+            var user = await userRepository.GetUserByPhoneNumberAsync(request.phoneNumber);
 
             return user;
         }
