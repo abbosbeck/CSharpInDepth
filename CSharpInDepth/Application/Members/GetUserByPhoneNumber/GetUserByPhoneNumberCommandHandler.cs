@@ -1,6 +1,4 @@
-﻿using Application.Abstractions;
-using Application.Common.Interfaces;
-using Domain.Entities;
+﻿using Application.Common.Interfaces;
 using MediatR;
 
 namespace Application.Members.GetUserByPhoneNumber

@@ -23,7 +23,7 @@ namespace CSharpInDepth.UserIdentity.Controllers
             CancellationToken cancellationToken)
         {
             var tokenResult = await Sender.Send(request, cancellationToken);
-            
+
             return Ok(tokenResult);
         }
     }

@@ -30,10 +30,10 @@ namespace Domain.Entities
             var hasUpperChar = new Regex(@"[A-Z]+");
             var hasMinimum8Chars = new Regex(@".{8,}");
 
-            var isValidated = hasNumber.IsMatch(password) 
-                && hasUpperChar.IsMatch(password) 
+            var isValidated = hasNumber.IsMatch(password)
+                && hasUpperChar.IsMatch(password)
                 && hasMinimum8Chars.IsMatch(password);
-            
+
             return isValidated;
         }
     }
