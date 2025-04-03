@@ -15,9 +15,9 @@ namespace Infrastructure.Persistence.Repositories
             return newUser.Entity;
         }
 
-        public async Task<User> GetUserByFirstNameAsync(string firstName)
+        public async Task<User> GetUserByPhoneNumberAsync(string phoneNumber)
         {
-            var user = await context.Users.FirstOrDefaultAsync(x => x.FirstName == firstName);
+            var user = await context.Users.FirstOrDefaultAsync(x => x.PhoneNumber == phoneNumber);
 
             return user;
         }
