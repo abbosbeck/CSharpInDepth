@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Application.Members.Register
+namespace Application.Users.Register
 {
     public sealed record RegisterCommand(
         string FirstName,

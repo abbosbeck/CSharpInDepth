@@ -2,7 +2,7 @@
 using Domain.Entities;
 using MediatR;
 
-namespace Application.Members.Register
+namespace Application.Users.Register
 {
     public class RegisterCommandHandler(IUserRepository userRepository) : IRequestHandler<RegisterCommand, UserResponse>
     {

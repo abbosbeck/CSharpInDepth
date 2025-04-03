@@ -1,5 +1,5 @@
-﻿using Application.Members.GetUserByPhoneNumber;
-using Application.Members.Register;
+﻿using Application.Users.GetUserByPhoneNumber;
+using Application.Users.Register;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

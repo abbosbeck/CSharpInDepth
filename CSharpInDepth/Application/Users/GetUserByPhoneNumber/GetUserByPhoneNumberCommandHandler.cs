@@ -1,7 +1,7 @@
 ﻿using Application.Common.Interfaces;
 using MediatR;
 
-namespace Application.Members.GetUserByPhoneNumber
+namespace Application.Users.GetUserByPhoneNumber
 {
     public sealed class GetUserByPhoneNumberCommandHandler(IUserRepository userRepository) : IRequestHandler<GetUserByPhoneNumberCommand, UserResponse>
     {
