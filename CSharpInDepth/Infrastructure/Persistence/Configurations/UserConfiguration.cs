@@ -17,6 +17,9 @@ namespace Infrastructure.Persistence.Configurations
             builder.Property(u => u.PasswordHash)
                 .IsRequired();
 
+            builder.Property(u => u.Intials)
+                .HasMaxLength(5);
+
             builder.HasQueryFilter(u => !u.IsDeleted);
 
             builder.Ignore(u => u.Email);
