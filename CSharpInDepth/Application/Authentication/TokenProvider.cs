@@ -19,7 +19,7 @@ namespace Application.Authentication
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-              Subject = new ClaimsIdentity
+                Subject = new ClaimsIdentity
               ([
                   new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
                   new Claim(JwtRegisteredClaimNames.PhoneNumber, user.PhoneNumber)

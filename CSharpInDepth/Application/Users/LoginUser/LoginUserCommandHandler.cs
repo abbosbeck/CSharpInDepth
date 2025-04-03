@@ -6,10 +6,10 @@ namespace Application.Users.LoginUser
 {
     public sealed record LoginUserResponse(string AccessToken, string RefreshToken);
     class LoginUserCommandHandler(
-        TokenProvider tokenProvider, 
-        IUserRepository userRepository, 
-        IRefreshTokenRepository refreshTokenRepository, 
-        PasswordHasher passwordHasher) 
+        TokenProvider tokenProvider,
+        IUserRepository userRepository,
+        IRefreshTokenRepository refreshTokenRepository,
+        PasswordHasher passwordHasher)
         : IRequestHandler<LoginUserCommand, LoginUserResponse>
     {
         public async Task<LoginUserResponse> Handle(LoginUserCommand request, CancellationToken cancellationToken)

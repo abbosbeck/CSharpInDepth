@@ -5,18 +5,18 @@ using MediatR;
 namespace Application.Users.RefreshToken
 {
     public sealed record RefreshTokenResponse(
-        string AccessToken, 
-        string RefreshToken) 
+        string AccessToken,
+        string RefreshToken)
         : IRequest<string>;
-    
+
     class RefreshTokenCommandHandler(
-        IRefreshTokenRepository refreshTokenRepository, 
-        IUnitOfWork unitOfWork, 
-        TokenProvider tokenProvider) 
+        IRefreshTokenRepository refreshTokenRepository,
+        IUnitOfWork unitOfWork,
+        TokenProvider tokenProvider)
         : IRequestHandler<RefreshTokenCommand, RefreshTokenResponse>
     {
         public async Task<RefreshTokenResponse> Handle(
-            RefreshTokenCommand request, 
+            RefreshTokenCommand request,
             CancellationToken cancellationToken)
         {
             var refreshToken = await refreshTokenRepository.GetRefreshTokenAsync(request.RefreshToken);
@@ -34,7 +34,7 @@ namespace Application.Users.RefreshToken
             refreshTokenRepository.UpdateRefreshToken(refreshToken);
             await unitOfWork.SaveChangesAsync();
 
-            return new RefreshTokenResponse(accessToken, refreshToken.Token);   
+            return new RefreshTokenResponse(accessToken, refreshToken.Token);
         }
     }
 }

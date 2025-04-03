@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistence.Repositories
 {
-    class RefreshTokenRepository(ApplicationDbContext applicationDbContext): IRefreshTokenRepository
+    class RefreshTokenRepository(ApplicationDbContext applicationDbContext) : IRefreshTokenRepository
     {
         public async Task AddRefreshTokenAsync(RefreshToken refreshToken)
         {

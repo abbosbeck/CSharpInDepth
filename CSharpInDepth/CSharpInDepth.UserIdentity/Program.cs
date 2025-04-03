@@ -1,10 +1,8 @@
 using Application;
 using CSharpInDepth.UserIdentity.Extensions;
-using Domain.Entities;
 using Infrastructure;
 using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;

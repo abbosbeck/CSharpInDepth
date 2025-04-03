@@ -46,7 +46,7 @@ namespace CSharpInDepth.UserIdentity.Controllers
             CancellationToken cancellationToken)
         {
             var tokenResult = await Sender.Send(request, cancellationToken);
-            
+
             return Ok(tokenResult);
         }
 
@@ -56,7 +56,7 @@ namespace CSharpInDepth.UserIdentity.Controllers
             CancellationToken cancellationToken)
         {
             var success = await Sender.Send(request, cancellationToken);
-            
+
             return Ok(success);
         }
     }
