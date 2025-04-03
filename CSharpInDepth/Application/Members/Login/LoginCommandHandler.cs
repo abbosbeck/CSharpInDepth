@@ -1,10 +1,11 @@
 ﻿using Application.Abstractions;
 using Application.Common.Interfaces;
+using Domain.Entities;
 using MediatR;
 
 namespace Application.Members.Login
 {
-    public sealed class LoginCommandHandler : IRequestHandler<LoginCommand, string>
+    public sealed class LoginCommandHandler : IRequestHandler<LoginCommand, User>
     {
         private readonly IUserRepository _userRepository;
         private readonly IJWTProvider _jWTProvider;
@@ -14,7 +15,7 @@ namespace Application.Members.Login
             _jWTProvider = jWTProvider;
         }
 
-        public async Task<string> Handle(LoginCommand request, CancellationToken cancellationToken)
+        public async Task<User> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
             var user = await _userRepository.GetUserByEmailAsync(request.Email);
 
@@ -23,7 +24,7 @@ namespace Application.Members.Login
 
             //var token = _jWTProvider.Generate(user);
 
-            return "token";
+            return user;
         }
     }
 }
