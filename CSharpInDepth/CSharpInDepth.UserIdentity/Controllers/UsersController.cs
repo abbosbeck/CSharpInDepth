@@ -7,8 +7,8 @@ namespace CSharpInDepth.UserIdentity.Controllers
 {
     public class UsersController(ISender Sender) : ApiControllerBase(Sender)
     {
-        [HttpPost]
-        public async Task<IActionResult> Login(
+        [HttpPost("GetUserByPhoneNumber")]
+        public async Task<IActionResult> GetUserByPhoneNumber(
             [FromBody] LoginCommand request,
             CancellationToken cancellationToken)
         {
