@@ -13,6 +13,7 @@ namespace Application.Members.Register
                 FirstName = request.FirstName, 
                 LastName = request.LastName, 
                 PhoneNumber = request.PhoneNumber, 
+                Department = request.Department,
                 PasswordHash = User.ValidatePassword(request.Password) 
                     ? User.HashPassword(request.Password) 
                     : throw new Exception("Password is not valid"),
