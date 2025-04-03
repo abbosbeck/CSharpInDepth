@@ -6,7 +6,6 @@ using Infrastructure;
 using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,6 +39,7 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
+await app.Services.InitialiseDatabaseAsync();
 
 app.ApplyMigrations();
 

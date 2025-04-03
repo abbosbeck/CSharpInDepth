@@ -11,9 +11,7 @@ namespace CSharpInDepth.UserIdentity.Controllers
             [FromBody] LoginCommand request,
             CancellationToken cancellationToken)
         {
-            var command = new LoginCommand(request.Email);
-
-            string tokenResult = await Sender.Send(command, cancellationToken);
+            var tokenResult = await Sender.Send(request, cancellationToken);
 
             return Ok(tokenResult);
         }

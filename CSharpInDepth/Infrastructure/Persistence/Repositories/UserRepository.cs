@@ -9,7 +9,7 @@ namespace Infrastructure.Persistence.Repositories
     {
         public async Task<User> GetUserByEmailAsync(string email)
         {
-            var user = await context.Users.FirstOrDefaultAsync(x => x.Email == email);
+            var user = await context.Users.FirstOrDefaultAsync(x => x.FirstName == email);
 
             return user;
         }

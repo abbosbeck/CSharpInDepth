@@ -7,6 +7,8 @@ namespace Infrastructure.Persistence
 {
     public class ApplicationDbContext(DbContextOptions options) : IdentityDbContext<User, Role, Guid>(options)
     {
+        public DbSet<User> Users => Set<User>();
+        public DbSet<Role> Roles => Set<Role>();
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

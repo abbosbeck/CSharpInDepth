@@ -17,6 +17,7 @@ namespace Infrastructure
 
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
+            services.AddScoped<AppDbContextInitializer>();
             services.AddScoped<IUserRepository, UserRepository>();
 
             return services;
