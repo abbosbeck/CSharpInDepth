@@ -49,7 +49,7 @@ namespace Infrastructure.Persistence
                         CreatedBy = "System",
                         LastModifiedOn = DateTime.UtcNow,
                         LastModifiedBy = "System",
-                        PasswordHash = HashPassword("Admin1234!"),
+                        PasswordHash = User.HashPassword("Admin1234!"),
                     });
 
                     dbContext.Set<User>().Add(new User
@@ -63,7 +63,7 @@ namespace Infrastructure.Persistence
                         CreatedBy = "System",
                         LastModifiedOn = DateTime.UtcNow,
                         LastModifiedBy = "System",
-                        PasswordHash = HashPassword("John1234!"),
+                        PasswordHash = User.HashPassword("John1234!"),
                     });
 
                     await dbContext.SaveChangesAsync();
@@ -131,14 +131,6 @@ namespace Infrastructure.Persistence
                 Console.WriteLine("Error during seeding: " + ex);
                 throw;
             }
-        }
-
-        private static string HashPassword(string password)
-        {
-            var passwordHasher = new Microsoft.AspNet.Identity.PasswordHasher();
-            var hashedPassword = passwordHasher.HashPassword(password);
-
-            return hashedPassword;
         }
     }
 }
