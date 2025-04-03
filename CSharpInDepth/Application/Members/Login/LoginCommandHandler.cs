@@ -17,7 +17,7 @@ namespace Application.Members.Login
 
         public async Task<User> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.GetUserByEmailAsync(request.Email);
+            var user = await _userRepository.GetUserByEmailAsync(request.FirstName);
 
             if (user is null)
                 throw new Exception("Not found");
