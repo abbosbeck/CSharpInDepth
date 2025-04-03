@@ -15,7 +15,7 @@ namespace Application.Authentication
         {
             _options = options.Value;
         }
-        public string Generate(UserEntity user)
+        public string Generate(User user)
         {
             var claims = new Claim[]
         {

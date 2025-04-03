@@ -27,7 +27,7 @@ builder.Services.ConfigureOptions<JwtBearerOptionsSetup>();
     .AddCookie(IdentityConstants.ApplicationScheme);
 */
 
-builder.Services.AddIdentityCore<UserEntity>()
+builder.Services.AddIdentityCore<User>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddApiEndpoints();
 
@@ -49,7 +49,7 @@ app.MapGet("users/me", async (ClaimsPrincipal claims, ApplicationDbContext conte
 
 app.UseHttpsRedirection();
 
-app.MapIdentityApi<UserEntity>();
+app.MapIdentityApi<User>();
 
 app.UseAuthorization();
 app.UseAuthentication();
