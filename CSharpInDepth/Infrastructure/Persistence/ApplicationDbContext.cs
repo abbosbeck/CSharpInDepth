@@ -9,7 +9,7 @@ namespace Infrastructure.Persistence
     {
         public DbSet<User> Users => Set<User>();
         public DbSet<Role> Roles => Set<Role>();
-        public DbSet<IdentityUserRole<Guid>> UserRoles => Set<IdentityUserRole<Guid>>();
+        public DbSet<UserRole> UserRoles => Set<UserRole>();
         public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -27,7 +27,7 @@ namespace Infrastructure.Persistence
 
             builder.Entity<User>().ToTable("users");
             builder.Entity<Role>().ToTable("roles");
-            builder.Entity<IdentityUserRole<Guid>>().ToTable("user_roles");
+            builder.Entity<UserRole>().ToTable("user_roles");
         }
     }
 }
