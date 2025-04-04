@@ -1,4 +1,5 @@
-﻿using Application.Users.GetUserByPhoneNumber;
+﻿using Application.Authentication;
+using Application.Users.GetUserByPhoneNumber;
 using Application.Users.LoginUser;
 using Application.Users.RefreshToken;
 using Application.Users.Register;
@@ -11,6 +12,7 @@ namespace CSharpInDepth.UserIdentity.Controllers
 {
     public class UsersController(ISender Sender) : ApiControllerBase(Sender)
     {
+        [Authorize(Roles = RoleNames.Admin)]
         [HttpPost("GetUserByPhoneNumber")]
         public async Task<IActionResult> GetUserByPhoneNumber(
             [FromBody] GetUserByPhoneNumberCommand request,
