@@ -27,7 +27,7 @@ namespace Application.Users.LoginUser
                 throw new Exception("Password is not valid");
             }
 
-            var token = tokenProvider.Create(user);
+            var token = await tokenProvider.Create(user);
 
             var refreshToken = new Domain.Entities.RefreshToken
             {

@@ -11,7 +11,7 @@ namespace Application
             IConfiguration configuration)
         {
             services.AddHttpContextAccessor();
-            services.AddSingleton<TokenProvider>();
+            services.AddScoped<TokenProvider>();
             services.AddScoped<PasswordHasher>();
 
             services.AddMediatR(configuration =>
