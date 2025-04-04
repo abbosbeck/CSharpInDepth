@@ -18,7 +18,7 @@ namespace Application.Authentication
 
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            List<string> roleNames = 
+            List<string> roleNames =
                 await userRoleRepository.GetUserRoleAsync(user.Id);
 
             List<Claim>? claims = [

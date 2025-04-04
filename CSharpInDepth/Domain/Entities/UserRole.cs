@@ -1,5 +1,4 @@
-﻿using Domain.Entities;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Domain.Entities
 {

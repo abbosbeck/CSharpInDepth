@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CSharpInDepth.UserIdentity.Controllers
 {
-    public class WeatherForecastController(ISender sender) : ApiControllerBase (sender)
+    public class WeatherForecastController(ISender sender) : ApiControllerBase(sender)
     {
         private static readonly string[] Summaries = new[]
         {
