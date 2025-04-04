@@ -12,7 +12,7 @@ namespace CSharpInDepth.UserIdentity.Controllers
 {
     public class UsersController(ISender Sender) : ApiControllerBase(Sender)
     {
-        [Authorize(Roles = RoleNames.Admin)]
+        [AllowedFor(RoleNames.Admin)]
         [HttpPost("GetUserByPhoneNumber")]
         public async Task<IActionResult> GetUserByPhoneNumber(
             [FromBody] GetUserByPhoneNumberCommand request,
