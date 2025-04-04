@@ -4,6 +4,7 @@ using Application.Users.RefreshToken;
 using Application.Users.Register;
 using Application.Users.RevokeRefreshToken;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CSharpInDepth.UserIdentity.Controllers
@@ -20,6 +21,7 @@ namespace CSharpInDepth.UserIdentity.Controllers
             return Ok(tokenResult);
         }
 
+        [AllowAnonymous]
         [HttpPost("register")]
         public async Task<IActionResult> Register(
             [FromBody] RegisterCommand request,
@@ -30,6 +32,7 @@ namespace CSharpInDepth.UserIdentity.Controllers
             return Ok(tokenResult);
         }
 
+        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login(
             [FromBody] LoginUserCommand request,
@@ -40,6 +43,7 @@ namespace CSharpInDepth.UserIdentity.Controllers
             return Ok(tokenResult);
         }
 
+        [AllowAnonymous]
         [HttpPost("refresh-token")]
         public async Task<IActionResult> LoginWithRefreshToken(
             [FromBody] RefreshTokenCommand request,
