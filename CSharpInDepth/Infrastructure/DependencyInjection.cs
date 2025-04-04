@@ -20,6 +20,7 @@ namespace Infrastructure
             services.AddScoped<AppDbContextInitializer>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+            services.AddScoped<IUserRoleRepository, UserRoleRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             return services;
