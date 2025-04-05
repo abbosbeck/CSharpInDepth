@@ -26,7 +26,7 @@ namespace Application.Users.RefreshToken
                 throw new Exception("Refresh token has expired");
             }
 
-            string accessToken = tokenProvider.Create(refreshToken.User);
+            string accessToken = await tokenProvider.Create(refreshToken.User);
 
             refreshToken.Token = tokenProvider.GenerateRefreshToken();
             refreshToken.ExpiresOnUtc = DateTime.UtcNow.AddDays(7);

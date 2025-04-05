@@ -105,7 +105,7 @@ namespace Infrastructure.Persistence
 
                     if (adminRole != null && adminUser != null)
                     {
-                        dbContext.Set<IdentityUserRole<Guid>>().Add(new IdentityUserRole<Guid>
+                        dbContext.Set<UserRole>().Add(new UserRole
                         {
                             UserId = adminUser.Id,
                             RoleId = adminRole.Id
@@ -116,7 +116,7 @@ namespace Infrastructure.Persistence
                     var justUser = await dbContext.Set<User>().FirstOrDefaultAsync(u => u.FirstName == "John");
                     if (userRole != null && justUser != null)
                     {
-                        dbContext.Set<IdentityUserRole<Guid>>().Add(new IdentityUserRole<Guid>
+                        dbContext.Set<UserRole>().Add(new UserRole
                         {
                             UserId = justUser.Id,
                             RoleId = userRole.Id
