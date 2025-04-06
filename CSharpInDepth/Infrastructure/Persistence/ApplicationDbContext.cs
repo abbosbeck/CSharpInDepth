@@ -7,6 +7,7 @@ namespace Infrastructure.Persistence
 {
     public class ApplicationDbContext(DbContextOptions options) : IdentityDbContext<User, Role, Guid>(options)
     {
+        public DbSet<UserRole> UserRoles => Set<UserRole>();
         public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
 
         protected override void OnModelCreating(ModelBuilder builder)
