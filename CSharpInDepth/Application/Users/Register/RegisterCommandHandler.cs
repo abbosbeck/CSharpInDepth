@@ -15,7 +15,7 @@ public sealed record RegisterCommand(
 
 public class RegisterCommandHandler(
     IUserRepository userRepository,
-    PasswordHasher passwordHasher) 
+    PasswordHasher passwordHasher)
     : IRequestHandler<RegisterCommand, UserResponse>
 {
     public async Task<UserResponse> Handle(RegisterCommand request, CancellationToken cancellationToken)
