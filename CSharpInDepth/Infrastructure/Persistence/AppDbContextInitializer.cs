@@ -98,7 +98,7 @@ namespace Infrastructure.Persistence
                     await dbContext.SaveChangesAsync();
                 }
 
-                if (!await dbContext.Set<IdentityUserRole<Guid>>().AnyAsync())
+               /* if (!await dbContext.Set<IdentityUserRole<Guid>>().AnyAsync())
                 {
                     var adminRole = await dbContext.Set<Role>().FirstOrDefaultAsync(r => r.Name == "Admin");
                     var adminUser = await dbContext.Set<User>().FirstOrDefaultAsync(u => u.FirstName == "Admin");
@@ -124,7 +124,7 @@ namespace Infrastructure.Persistence
                     }
 
                     await dbContext.SaveChangesAsync();
-                }
+                }*/
 
             }
             catch (Exception ex)

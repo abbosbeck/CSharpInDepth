@@ -8,26 +8,26 @@ namespace Infrastructure.Persistence.Repositories
     {
         public async Task AddRefreshTokenAsync(RefreshToken refreshToken)
         {
-            await applicationDbContext.RefreshTokens.AddAsync(refreshToken);
-            await applicationDbContext.SaveChangesAsync();
+           /* await applicationDbContext.RefreshTokens.AddAsync(refreshToken);
+            await applicationDbContext.SaveChangesAsync();*/
         }
 
         public async Task DeleteRefreshToken(Guid userId)
         {
-            await applicationDbContext.RefreshTokens
+            /*await applicationDbContext.RefreshTokens
                 .Where(r => r.UserId == userId)
                 .ExecuteDeleteAsync();
 
-            await applicationDbContext.SaveChangesAsync();
+            await applicationDbContext.SaveChangesAsync();*/
         }
 
         public async Task<RefreshToken> GetRefreshTokenAsync(string refreshToken)
         {
-            var refreshTokenFromDb = await applicationDbContext.RefreshTokens
+            /*var refreshTokenFromDb = await applicationDbContext.RefreshTokens
                 .Include(r => r.User)
                 .FirstOrDefaultAsync(r => r.Token == refreshToken);
-
-            return refreshTokenFromDb;
+*/
+            return null;
         }
 
         public void UpdateRefreshToken(RefreshToken refreshToken)
