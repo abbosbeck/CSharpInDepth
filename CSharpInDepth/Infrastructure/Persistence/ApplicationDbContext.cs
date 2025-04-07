@@ -3,29 +3,32 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Persistence
+namespace Infrastructure.Persistence;
+
+public class ApplicationDbContext : IdentityDbContext<
+    User,
+    Role,
+    Guid>
 {
-    public class ApplicationDbContext(DbContextOptions options) : IdentityDbContext<User, Role, Guid>(options)
+    public ApplicationDbContext(DbContextOptions options)
+        : base(options)
     {
-        public DbSet<UserRole> UserRoles => Set<UserRole>();
-        public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
+    }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
 
-            builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+        builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
 
-            builder.Ignore<IdentityUserClaim<Guid>>();
-            builder.Ignore<IdentityRoleClaim<Guid>>();
-            builder.Ignore<IdentityUserToken<Guid>>();
-            builder.Ignore<IdentityUserLogin<Guid>>();
+        IgnoreUnusedIdentityTables(builder);
+    }
 
-            //builder.HasDefaultSchema("identityTables");
-
-            builder.Entity<User>().ToTable("users");
-            builder.Entity<Role>().ToTable("roles");
-            builder.Entity<UserRole>().ToTable("user_roles");
-        }
+    private static void IgnoreUnusedIdentityTables(ModelBuilder builder)
+    {
+        builder.Ignore<IdentityUserClaim<Guid>>();
+        builder.Ignore<IdentityRoleClaim<Guid>>();
+        builder.Ignore<IdentityUserToken<Guid>>();
+        builder.Ignore<IdentityUserLogin<Guid>>();
     }
 }

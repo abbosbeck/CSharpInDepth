@@ -3,25 +3,35 @@ using Application.Common.Interfaces;
 using Domain.Entities;
 using MediatR;
 
-namespace Application.Users.Register
-{
-    public class RegisterCommandHandler(IUserRepository userRepository, PasswordHasher passwordHasher) : IRequestHandler<RegisterCommand, UserResponse>
-    {
-        public async Task<UserResponse> Handle(RegisterCommand request, CancellationToken cancellationToken)
-        {
-            var user = new User
-            {
-                FirstName = request.FirstName,
-                LastName = request.LastName,
-                PhoneNumber = request.PhoneNumber,
-                Department = request.Department,
-                PasswordHash = User.ValidatePassword(request.Password)
-                    ? passwordHasher.Hash(request.Password)
-                    : throw new Exception("Password is not valid"),
-            };
-            await userRepository.AddUserAsync(user);
+namespace Application.Users.Register;
 
-            return UserResponse.FromUser(user);
-        }
+public sealed record RegisterCommand(
+    string FirstName,
+    string LastName,
+    string Department,
+    string PhoneNumber,
+    string Password)
+    : IRequest<UserResponse>;
+
+public class RegisterCommandHandler(
+    IUserRepository userRepository,
+    PasswordHasher passwordHasher)
+    : IRequestHandler<RegisterCommand, UserResponse>
+{
+    public async Task<UserResponse> Handle(RegisterCommand request, CancellationToken cancellationToken)
+    {
+        var user = new User
+        {
+            FirstName = request.FirstName,
+            LastName = request.LastName,
+            PhoneNumber = request.PhoneNumber,
+            Department = request.Department,
+            PasswordHash = User.ValidatePassword(request.Password)
+                ? passwordHasher.Hash(request.Password)
+                : throw new Exception("Password is not valid"),
+        };
+        await userRepository.AddUserAsync(user);
+
+        return UserResponse.FromUser(user);
     }
 }
