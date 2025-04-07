@@ -15,7 +15,7 @@ namespace CSharpInDepth.UserIdentity.Controllers
         [AllowedFor(RoleNames.Admin)]
         [HttpPost("GetUserByPhoneNumber")]
         public async Task<IActionResult> GetUserByPhoneNumber(
-            [FromBody] GetUserByPhoneNumberCommand request,
+            [FromBody] GetUserByPhoneNumberQuery request,
             CancellationToken cancellationToken)
         {
             var tokenResult = await Sender.Send(request, cancellationToken);
@@ -37,7 +37,7 @@ namespace CSharpInDepth.UserIdentity.Controllers
         [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login(
-            [FromBody] LoginUserCommand request,
+            [FromBody] LoginUserQuery request,
             CancellationToken cancellationToken)
         {
             var tokenResult = await Sender.Send(request, cancellationToken);
