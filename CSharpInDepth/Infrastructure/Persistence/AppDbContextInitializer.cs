@@ -98,14 +98,14 @@ namespace Infrastructure.Persistence
                     await dbContext.SaveChangesAsync();
                 }
 
-               /* if (!await dbContext.Set<IdentityUserRole<Guid>>().AnyAsync())
+                if (!await dbContext.Set<IdentityUserRole<Guid>>().AnyAsync())
                 {
                     var adminRole = await dbContext.Set<Role>().FirstOrDefaultAsync(r => r.Name == "Admin");
                     var adminUser = await dbContext.Set<User>().FirstOrDefaultAsync(u => u.FirstName == "Admin");
 
                     if (adminRole != null && adminUser != null)
                     {
-                        dbContext.Set<UserRole>().Add(new UserRole
+                        dbContext.UserRoles.Add(new IdentityUserRole<Guid>
                         {
                             UserId = adminUser.Id,
                             RoleId = adminRole.Id
@@ -116,7 +116,7 @@ namespace Infrastructure.Persistence
                     var justUser = await dbContext.Set<User>().FirstOrDefaultAsync(u => u.FirstName == "John");
                     if (userRole != null && justUser != null)
                     {
-                        dbContext.Set<UserRole>().Add(new UserRole
+                        dbContext.UserRoles.Add(new IdentityUserRole<Guid>
                         {
                             UserId = justUser.Id,
                             RoleId = userRole.Id
@@ -124,7 +124,7 @@ namespace Infrastructure.Persistence
                     }
 
                     await dbContext.SaveChangesAsync();
-                }*/
+                }
 
             }
             catch (Exception ex)
